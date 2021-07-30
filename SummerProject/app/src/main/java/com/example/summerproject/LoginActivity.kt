@@ -23,6 +23,7 @@ class LoginActivity : AppCompatActivity() {
             var userEmail = username.text.toString()
             var password = password.text.toString()
 
+
             doLogin(userEmail, password) // 로그인을 위한 함수
         }
 
