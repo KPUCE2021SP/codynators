@@ -20,8 +20,8 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         loginBtn.setOnClickListener { //로그인을 위한 버튼 리스너
-            val userEmail = username.text.toString()
-            val password = password.text.toString()
+            var userEmail = username.text.toString()
+            var password = password.text.toString()
 
             doLogin(userEmail, password) // 로그인을 위한 함수
         }

@@ -20,8 +20,8 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
 
         Register.setOnClickListener { //회원가입
-            val userEmail = Email.text.toString()
-            val password = PWD.text.toString()
+            var userEmail = Email.text.toString()
+            var password = PWD.text.toString()
 
             doSignUp(userEmail, password) // 회원가입 위한 함수
         }
