@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "665005676809",
+    "project_id": "kpu-summerproject",
+    "storage_bucket": "kpu-summerproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:665005676809:android:9521f765fe03948e7c9bd8",
+        "android_client_info": {
+          "package_name": "com.example.summerproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "665005676809-srglns9kcgmod7vbjb44in2n6a51951j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALAUUJY9s28cHrKpY-BpPgF4dAN2Q_79U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "665005676809-srglns9kcgmod7vbjb44in2n6a51951j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
