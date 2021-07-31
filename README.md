@@ -28,7 +28,7 @@
 * * *
 
 ### 3. Architecture ✨
-<p align="center"><img src="https://user-images.githubusercontent.com/87136217/127748522-c380a00c-2e47-461f-a918-75a3eb352648.png"  width="300" height="300"></p> 
+<p align="center"><img src="https://user-images.githubusercontent.com/87136217/127748522-c380a00c-2e47-461f-a918-75a3eb352648.png"  width="600" height="300"></p> 
 
 * * *
 
