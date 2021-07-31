@@ -27,12 +27,17 @@
 
 * * *
 
-### 3. Continuity 🎨
+### 3. Architecture ✨
+<p align="center"><img src="https://user-images.githubusercontent.com/87136217/127748522-c380a00c-2e47-461f-a918-75a3eb352648.png"  width="300" height="300"></p> 
+
+* * *
+
+### 4. Continuity 🎨
 <p align="center"><img src="https://user-images.githubusercontent.com/56003992/127262876-6703dc7e-22ff-43b0-83e4-9a1eebbe9135.jpg"  width="300" height="300"></p> 
 
 * * *
 
-### 4. Role 👨‍👨‍👦‍👦
+### 5. Role 👨‍👨‍👦‍👦
 - **[고현석](https://github.com/khsexk)**: Captain, Arduino, Sensor
 - [김태용](https://github.com/YongsHub): Crew, Arduino, Sensor
 - [김현수](https://github.com/KimHacne): Crew, Front-End
