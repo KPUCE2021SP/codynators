@@ -17,5 +17,6 @@ class QR_CreateActivity : AppCompatActivity() {
         Map.put("Table 1", Table)
 
         myRef.updateChildren(Map)
+        finish()
     }
 }

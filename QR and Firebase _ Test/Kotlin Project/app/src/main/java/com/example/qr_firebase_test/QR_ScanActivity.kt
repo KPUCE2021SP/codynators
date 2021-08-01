@@ -33,7 +33,7 @@ class QR_ScanActivity : AppCompatActivity() {
 
                 // Firebase Realtime DB에 쓰기
                 var useTable : String = result.getContents()
-                var Table : Table_Data = Table_Data("", 1)
+                var Table : Table_Data = Table_Data("b", 1)
                 var Map : HashMap<String, Any> = HashMap<String, Any>()
                 Map.put(useTable, Table)
 
