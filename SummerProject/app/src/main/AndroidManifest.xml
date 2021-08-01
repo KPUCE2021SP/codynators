@@ -9,6 +9,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:hardwareAccelerated="true"
+        android:largeHeap="true"
         android:theme="@style/Theme.SummerProject">
         <activity android:name=".CheckInActivity"></activity>
         <activity android:name=".CheckOutActivity"></activity>

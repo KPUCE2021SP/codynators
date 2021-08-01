@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "665005676809",
+    "firebase_url": "https://kpu-summerproject-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "kpu-summerproject",
     "storage_bucket": "kpu-summerproject.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "665005676809-5n29mcq2j040geai22grppslacuenptn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.summerproject",
+            "certificate_hash": "d0b474fc3cc3a6857f6a3383012188ce138dbf94"
+          }
+        },
         {
           "client_id": "665005676809-srglns9kcgmod7vbjb44in2n6a51951j.apps.googleusercontent.com",
           "client_type": 3
