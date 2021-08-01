@@ -4,17 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E4F6F8"
     tools:context=".LoginActivity">
+
     <EditText
         android:id="@+id/username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="20dp"
         android:ems="10"
-        android:hint="EMAIL"
+        android:hint="E-MAIL"
         android:inputType="textPersonName"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,39 +27,44 @@
         android:id="@+id/password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
         android:ems="10"
         android:hint="PASSWORD"
         android:inputType="textPersonName"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:passwordToggleEnabled="true"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/username"
+        app:passwordToggleEnabled="true" />
 
     <Button
         android:id="@+id/loginBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="8dp"
-        android:text="로그인"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#0C0C0C"
-        app:backgroundTint="#8E8989"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/cornor"
+        android:text="LOGIN"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="#E2F7FA"
+        app:backgroundTint="#84BAC1"
+        app:layout_constraintEnd_toStartOf="@+id/registerBtn"
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <Button
         android:id="@+id/registerBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="8dp"
-        android:text="회원가입"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#0C0C0C"
-        app:backgroundTint="#8E8989"
-        app:layout_constraintStart_toEndOf="@+id/loginBtn"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/cornor"
+        android:text="REGISTER"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="#E2F7FA"
+        app:backgroundTint="#84BAC1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

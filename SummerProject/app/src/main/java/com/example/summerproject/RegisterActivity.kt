@@ -29,12 +29,18 @@ class RegisterActivity : AppCompatActivity() {
 
             doSignUp(userEmail, password) // 회원가입 위한 함수
         }
+        btnCancel.setOnClickListener {
+            finish()
+            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+        }
     }
     private fun doSignUp(userEmail: String, password: String){ // 회원가입을 위한 함수
         auth.createUserWithEmailAndPassword(userEmail, password)
             .addOnCompleteListener(this){
                 if(it.isSuccessful){
                     startActivity<MainActivity>()
+                    finish()
+                    overridePendingTransition(R.anim.fadein,R.anim.fadeout)
                 }else{
                     Log.w("LoginActivity", "signInWithEmail", it.exception)
                     toast("회원가입 실패 비밀번호 6자리 이상 입력하세요!")

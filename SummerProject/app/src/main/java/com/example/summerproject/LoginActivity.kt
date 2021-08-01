@@ -33,6 +33,7 @@ class LoginActivity : AppCompatActivity() {
         registerBtn.setOnClickListener {
             startActivity<RegisterActivity>()
             finish()
+            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
         }
     }
 
@@ -42,6 +43,7 @@ class LoginActivity : AppCompatActivity() {
                 if(it.isSuccessful){
                     startActivity<MainActivity>() // 로그인 성공시 MainActivity 실행
                     finish()
+                    overridePendingTransition(R.anim.fadein,R.anim.fadeout)
                 }else{
                     Log.w("LoginActivity", "signInWithEmail", it.exception)
                     toast("로그인 실패")
