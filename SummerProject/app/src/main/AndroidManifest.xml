@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.summerproject">
 
     <application
@@ -9,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SummerProject">
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".CheckInActivity"></activity>
+        <activity android:name=".CheckOutActivity"></activity>
+        <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,7 +21,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".PlaceListActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" ></activity>
+        // 2021.08.01 khsexk: 세로모드 QR 체크인을 위해 추가
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="fullSensor"
+            tools:replace="screenOrientation" />
     </application>
 
 </manifest>

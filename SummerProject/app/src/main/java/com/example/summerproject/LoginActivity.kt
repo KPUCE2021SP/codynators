@@ -16,6 +16,7 @@ import org.jetbrains.anko.toast
 *  Anko 라이브러리 사용*/
 class LoginActivity : AppCompatActivity() {
     private var firebaseAuth: FirebaseAuth? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
