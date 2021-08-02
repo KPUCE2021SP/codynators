@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_check_out.*
+import java.util.*
 
 // 2021.08.01 khsexk: 체크아웃 구성
 class CheckOutActivity : AppCompatActivity() {
@@ -21,6 +22,11 @@ class CheckOutActivity : AppCompatActivity() {
 
             myRef.updateChildren(Map)
             finish()
+            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+        }
+        cancel.setOnClickListener {
+            finish()
+            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
         }
     }
 }

@@ -6,6 +6,8 @@ import android.os.Bundle
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.startActivity
+import java.util.*
 
 class MainActivity : Activity() {
     // 2021.08.01 khsexk: rdb 연동
@@ -24,21 +26,20 @@ class MainActivity : Activity() {
         Map.put("Table 3", Table)
         myRef.updateChildren(Map)
 
+        board.bringToFront()
+
         // 2021.08.01 khsexk: 체크인 and 체크아웃
         checkIn.setOnClickListener{
-            val intent = Intent(this,CheckInActivity::class.java)
-            startActivity(intent)
+            startActivity<CheckInActivity>()
             overridePendingTransition(R.anim.fadein,R.anim.fadeout)
         }
         checkOut.setOnClickListener {
-            val intent = Intent(this,CheckOutActivity::class.java)
-            startActivity(intent)
+            startActivity<CheckOutActivity>()
             overridePendingTransition(R.anim.fadein,R.anim.fadeout)
         }
 
         placeList.setOnClickListener {
-            val intent = Intent(this,PlaceListActivity::class.java)
-            startActivity(intent)
+            startActivity<PlaceListActivity>()
             overridePendingTransition(R.anim.fadein,R.anim.fadeout)
         }
     }

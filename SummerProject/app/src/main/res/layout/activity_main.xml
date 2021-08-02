@@ -58,6 +58,15 @@
         android:layout_height="match_parent"
         android:layout_weight="1">
 
+        <ImageButton
+            android:id="@+id/board"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="10dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/add_circle" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -134,6 +143,7 @@
                         android:layout_gravity="center"
                         android:text="Check-Out"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView

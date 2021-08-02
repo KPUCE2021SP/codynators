@@ -8,6 +8,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.zxing.integration.android.IntentIntegrator
 import com.google.zxing.integration.android.IntentResult
+import java.util.*
 
 // 2021.08.01 khsexk: 체크인 구성
 class CheckInActivity : AppCompatActivity() {

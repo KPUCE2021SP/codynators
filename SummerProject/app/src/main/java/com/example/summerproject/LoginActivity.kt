@@ -16,6 +16,8 @@ import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
@@ -35,6 +37,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        var auth = Firebase.auth
         callbackManager = CallbackManager.Factory.create() // 페이스북 위한 콜백 매니저
         firebaseAuth = FirebaseAuth.getInstance() // Firebase Auth 객체를 얻는 변수
 
@@ -65,16 +68,28 @@ class LoginActivity : AppCompatActivity() {
 
 
         loginBtn.setOnClickListener { //로그인을 위한 버튼 리스너
-            val userEmail = username.text.toString()
-            val password = password.text.toString()
+            var userEmail = username.text.toString()
+            var password = password.text.toString()
 
+            if(userEmail == "" || password == ""){
+                toast("E-mail or Password is blank")
+            }else{
+                var create = auth.signInWithEmailAndPassword(userEmail,password)
+                create.addOnCompleteListener(this) {
+                    if (it.isSuccessful) {
+                        startActivity<MainActivity>() // 로그인 성공시 MainActivity 실행
+                        overridePendingTransition(R.anim.fadein, R.anim.fadeout)
+                    } else {
+                        toast("Login Failed")
+                    }
+                }
+            }
 
-            doLogin(userEmail, password) // 로그인을 위한 함수
+          //  doLogin(userEmail, password) // 로그인을 위한 함수
         }
 
         registerBtn.setOnClickListener {
             startActivity<RegisterActivity>()
-            finish()
             overridePendingTransition(R.anim.fadein, R.anim.fadeout)
         }
 
@@ -162,17 +177,21 @@ class LoginActivity : AppCompatActivity() {
     }
 
 
-    private fun doLogin(userEmail: String, password: String){ // 로그인 함수
-        firebaseAuth.signInWithEmailAndPassword(userEmail, password) // Firebase.auth - firebase의 인증 API를 제공하는 객체
-            .addOnCompleteListener(this){
-                if(it.isSuccessful){
-                    startActivity<MainActivity>() // 로그인 성공시 MainActivity 실행
-                    finish()
-                    overridePendingTransition(R.anim.fadein, R.anim.fadeout)
-                }else{
-                    Log.w("LoginActivity", "signInWithEmail", it.exception)
-                    toast("로그인 실패")
-                }
-            }
-    }
+//    private fun doLogin(userEmail: String, password: String){ // 로그인 함수
+//        firebaseAuth.signInWithEmailAndPassword(userEmail, password) // Firebase.auth - firebase의 인증 API를 제공하는 객체
+//            .addOnCompleteListener(this) {
+//                if (userEmail == "" || password == "") {
+//                    toast("E-mail or Password is blank")
+//                } else {
+//                    if (it.isSuccessful) {
+//                        startActivity<MainActivity>() // 로그인 성공시 MainActivity 실행
+//                        overridePendingTransition(R.anim.fadein, R.anim.fadeout)
+//                    } else {
+//                        Log.w("LoginActivity", "signInWithEmail", it.exception)
+//                        toast("로그인 실패")
+//                    }
+//                }
+//            }
+//    }   null 예외 처리가 안되서 클릭 리스너에서 구현
+
 }

@@ -61,4 +61,8 @@ dependencies {
     //Facebook Login
     implementation 'com.facebook.android:facebook-login:[8.1)' // facebook
     implementation 'com.facebook.android:facebook-android-sdk:4.42.0' // facebook
+
+    // firestore
+    implementation platform('com.google.firebase:firebase-bom:28.2.1')
+    implementation 'com.google.firebase:firebase-firestore-ktx'
 }

@@ -27,24 +27,39 @@ class RegisterActivity : AppCompatActivity() {
             var userEmail = Email.text.toString()
             var password = PWD.text.toString()
 
-            doSignUp(userEmail, password) // 회원가입 위한 함수
+            if(userEmail == "" || password == ""){
+                toast("E-mail or Password is blank")
+            }else{
+                var create = auth.createUserWithEmailAndPassword(userEmail,password)
+                create.addOnCompleteListener(this) {
+                    if (it.isSuccessful) {
+                        toast("Register Success")
+                        finish()
+                        overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+                    } else {
+                        toast("Register Failed. Password must be at least 6")
+                    }
+                }
+            }
+
+            //doSignUp(userEmail, password) // 회원가입 위한 함수
         }
         btnCancel.setOnClickListener {
             finish()
             overridePendingTransition(R.anim.fadein,R.anim.fadeout)
         }
     }
-    private fun doSignUp(userEmail: String, password: String){ // 회원가입을 위한 함수
-        auth.createUserWithEmailAndPassword(userEmail, password)
-            .addOnCompleteListener(this){
-                if(it.isSuccessful){
-                    startActivity<MainActivity>()
-                    finish()
-                    overridePendingTransition(R.anim.fadein,R.anim.fadeout)
-                }else{
-                    Log.w("LoginActivity", "signInWithEmail", it.exception)
-                    toast("회원가입 실패 비밀번호 6자리 이상 입력하세요!")
-                }
-            }
-    }
+//    private fun doSignUp(userEmail: String, password: String){ // 회원가입을 위한 함수
+//        auth.createUserWithEmailAndPassword(userEmail, password)
+//            .addOnCompleteListener(this){
+//                if(it.isSuccessful){
+//                    startActivity<MainActivity>()
+//                    finish()
+//                    overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+//                }else{
+//                    Log.w("LoginActivity", "signInWithEmail", it.exception)
+//                    toast("회원가입 실패 비밀번호 6자리 이상 입력하세요!")
+//                }
+//            }
+//    } null 예외 처리가 안되어 클릭 리스너에서 구현
 }
