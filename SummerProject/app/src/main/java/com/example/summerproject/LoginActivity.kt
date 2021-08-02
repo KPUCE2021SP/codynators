@@ -1,41 +1,60 @@
 package com.example.summerproject
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.result.contract.ActivityResultContracts
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.facebook.*
+import com.facebook.appevents.AppEventsLogger
+import com.facebook.login.LoginResult
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
+import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
+import java.math.BigDecimal
+import java.util.*
 
 
 /*
 * 로그인 구현  21.07.30 김태용
 *  Anko 라이브러리 사용*/
 class LoginActivity : AppCompatActivity() {
-<<<<<<< HEAD
-    private var firebaseAuth: FirebaseAuth? = null
-
-=======
     private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var googleSignInClient: GoogleSignInClient
->>>>>>> origin/Taeyong-Kim
+    private lateinit var googleSignInClient: GoogleSignInClient // 구글 로그인 연동을 위한 변수
+    private lateinit var callbackManager: CallbackManager // 페이스북 로그인 연동을 위한 콜백변수
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        callbackManager = CallbackManager.Factory.create() // 페이스북 위한 콜백 매니저
         firebaseAuth = FirebaseAuth.getInstance() // Firebase Auth 객체를 얻는 변수
+
+
+        login_button.setReadPermissions("email", "public_profile")
+        login_button.registerCallback(callbackManager, object :
+            FacebookCallback<LoginResult> {
+            override fun onSuccess(loginResult: LoginResult) {
+                Log.d(TAG, "facebook:onSuccess:$loginResult")
+                handleFacebookAccessToken(loginResult.accessToken) // 로그인 성공시 handleFacebookAccessToken 함수 실행
+            }
+
+            override fun onCancel() {
+                Log.d(TAG, "facebook:onCancel")
+            }
+
+            override fun onError(error: FacebookException) {
+                Log.d(TAG, "facebook:onError", error)
+            }
+        })
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.firebase_web_client_id)) // res -> values -> strings.xml 파일 확인
@@ -56,7 +75,7 @@ class LoginActivity : AppCompatActivity() {
         registerBtn.setOnClickListener {
             startActivity<RegisterActivity>()
             finish()
-            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+            overridePendingTransition(R.anim.fadein, R.anim.fadeout)
         }
 
         googleBtn.setOnClickListener{
@@ -69,7 +88,6 @@ class LoginActivity : AppCompatActivity() {
 //        val currentUser = firebaseAuth.currentUser
 //        updateUI(currentUser)
 //    }
-
 
     // 구글 간편로그인 함수
     private fun signIn() {
@@ -92,6 +110,27 @@ class LoginActivity : AppCompatActivity() {
                 Log.w(TAG, "Google sign in failed", e)
             }
         }
+
+        callbackManager.onActivityResult(requestCode, resultCode, data)
+    }
+
+    private fun handleFacebookAccessToken(token: AccessToken) { // 페이스북과 firebase 연동
+        Log.d(TAG, "handleFacebookAccessToken:$token")
+
+        val credential = FacebookAuthProvider.getCredential(token.token)
+        firebaseAuth.signInWithCredential(credential) // 구글 계정으로 연동되어
+            .addOnCompleteListener(this) { task -> // 성공시
+                if (task.isSuccessful) {
+                    Log.d(TAG, "signInWithCredential:success")
+                    val user = firebaseAuth.currentUser
+                    updateUI(user) // Main화면으로 넘어감
+                } else {
+                    Log.w(TAG, "signInWithCredential:failure", task.exception)
+                    Toast.makeText(baseContext, "Authentication failed.",
+                        Toast.LENGTH_SHORT).show()
+                    updateUI(null)
+                }
+            }
     }
 
 
@@ -118,7 +157,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     companion object {
-        private const val TAG = "GoogleActivity"
+        private const val TAG = "GoogleActivity&FacebookActivity"
         private const val RC_SIGN_IN = 9001
     }
 
@@ -129,7 +168,7 @@ class LoginActivity : AppCompatActivity() {
                 if(it.isSuccessful){
                     startActivity<MainActivity>() // 로그인 성공시 MainActivity 실행
                     finish()
-                    overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+                    overridePendingTransition(R.anim.fadein, R.anim.fadeout)
                 }else{
                     Log.w("LoginActivity", "signInWithEmail", it.exception)
                     toast("로그인 실패")
