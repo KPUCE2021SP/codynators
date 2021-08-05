@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">665005676809-srglns9kcgmod7vbjb44in2n6a51951j.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">665005676809</string>
+    <string name="google_api_key" translatable="false">AIzaSyALAUUJY9s28cHrKpY-BpPgF4dAN2Q_79U</string>
+    <string name="google_app_id" translatable="false">1:665005676809:android:9521f765fe03948e7c9bd8</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyALAUUJY9s28cHrKpY-BpPgF4dAN2Q_79U</string>
+    <string name="google_storage_bucket" translatable="false">kpu-summerproject.appspot.com</string>
+    <string name="project_id" translatable="false">kpu-summerproject</string>
+</resources>

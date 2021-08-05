@@ -1,0 +1,126 @@
+[
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\anim_fadein.xml.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\anim\\fadein.xml"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable_pin.xml.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\drawable\\pin.xml"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_checkin.xml.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\layout\\activity_checkin.xml"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_current_place.xml.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\layout\\activity_current_place.xml"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\anim_fadeout.xml.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\anim\\fadeout.xml"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cornor.xml.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\drawable\\cornor.xml"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable_facebook.jpg.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\drawable\\facebook.jpg"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable_back.xml.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\drawable\\back.xml"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable_google.jpg.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\drawable\\google.jpg"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable_add_circle.xml.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\drawable\\add_circle.xml"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn_google_dark_normal_tvdpi.9.png.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\drawable\\btn_google_dark_normal_tvdpi.9.png"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_check_out.xml.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\layout\\activity_check_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_place_list.xml.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\layout\\activity_place_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable_map.JPG.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\drawable\\map.JPG"
+    },
+    {
+        "merged": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\TAEYONG\\codynators\\SummerProject\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    }
+]
