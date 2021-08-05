@@ -1,0 +1,8 @@
+1. themes.xml 파일 안에
+<!-- Customize your theme here. --> 가 있을 텐데
+<item name="windowActionBar">false</item>
+<item name="windowNoTitle">true</item>  추가해야함
+
+2. res 폴더 안에 menu 폴더 menu 선택해서 생성해야함
+
+3. 레이아웃 및 메뉴 레이아웃들은 layout 폴더에 다 있음
