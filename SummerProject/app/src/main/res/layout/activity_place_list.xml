@@ -7,17 +7,5 @@
     android:background="@drawable/map"
     tools:context=".PlaceListActivity">
 
-    <ImageButton
-        android:id="@+id/placeListToMain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="30dp"
-        android:background="#00FFFFFF"
-        android:foreground="?attr/selectableItemBackground"
-        android:src="@drawable/back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:src="@drawable/back"
-        tools:srcCompat="@drawable/back" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

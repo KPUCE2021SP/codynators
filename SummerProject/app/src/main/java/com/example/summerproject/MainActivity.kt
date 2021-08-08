@@ -65,7 +65,7 @@ class MainActivity : Activity() {
         }
 
         placeList.setOnClickListener {
-            startActivity<PlaceListActivity>()
+            startActivity<MapActivity>()
             overridePendingTransition(R.anim.fadein,R.anim.fadeout)
         }
     }
