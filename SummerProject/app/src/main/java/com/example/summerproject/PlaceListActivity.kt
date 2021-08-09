@@ -9,11 +9,11 @@ class PlaceListActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_place_list)
 
-        placeListToMain.bringToFront()
-
-        placeListToMain.setOnClickListener {
-            finish()
-            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
-        }
+//        placeListToMain.bringToFront()
+//
+//        placeListToMain.setOnClickListener {
+//            finish()
+//            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+//        }
     }
 }
