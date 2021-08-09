@@ -1,13 +1,15 @@
 package com.example.summerproject
 
-import android.app.Activity
 import android.content.ContentValues.TAG
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -16,13 +18,30 @@ import org.jetbrains.anko.startActivity
 import java.util.*
 import kotlin.collections.ArrayList
 
-class MainActivity : Activity() {
+class
+MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
+    lateinit var navigationView: NavigationView
+    lateinit var drawerLayout: DrawerLayout
     // 2021.08.01 khsexk: rdb 연동
 //    val database : FirebaseDatabase = FirebaseDatabase.getInstance()
 //    val myRef : DatabaseReference = database.getReference("Table Use Information") made by 현석
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val toolbar : Toolbar = findViewById(R.id.toolbar) // toolBar를 통해 App Bar 생성
+        setSupportActionBar(toolbar)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true) // 드로어를 꺼낼 홈 버튼 활성화
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.navi_menu) // 홈버튼 이미지 변경
+        supportActionBar?.setDisplayShowTitleEnabled(false) // 툴바에 타이틀 안보이게
+
+        //네비게이션 드로어 생성
+        drawerLayout = drawer_layout
+
+        //네비게이션 드로어 내에 있는 화면의 이벤트를 처리하기 위해 생성
+        navigationView = nav_view
+        navigationView.setNavigationItemSelectedListener(this) // navigation 리스너
 
         // 2021.08.01 khsexk: rdb 초기 데이터 생성 -> 생성후 삭제코드
 //        var Table : TableData = TableData("", 0)
@@ -55,19 +74,37 @@ class MainActivity : Activity() {
         }
 
         // 2021.08.01 khsexk: 체크인 and 체크아웃
-        checkIn.setOnClickListener{
-            startActivity<CheckInActivity>()
-            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+//        checkIn.setOnClickListener{
+//            startActivity<CheckInActivity>()
+//            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+//        }
+//        checkOut.setOnClickListener {
+//            startActivity<CheckOutActivity>()
+//            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+//        }
+//
+//        placeList.setOnClickListener {
+//            startActivity<PlaceListActivity>()
+//            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+//        }
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        //클릭한 툴바 메뉴 아이템 id마다 다르게 실행하도록 설정
+        when(item.itemId){
+            android.R.id.home->{
+                drawerLayout.openDrawer(GravityCompat.START)
+            }
         }
-        checkOut.setOnClickListener {
-            startActivity<CheckOutActivity>()
-            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
-        }
+        return super.onOptionsItemSelected(item)
+    }
 
-        placeList.setOnClickListener {
-            startActivity<PlaceListActivity>()
-            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+    override fun onNavigationItemSelected(item: MenuItem): Boolean { // 네비게이션 아이템 선택 시
+        when(item.itemId){
+            R.id.menu_item1-> startActivity<CheckInActivity>()
+            R.id.menu_item2-> startActivity<CheckOutActivity>()
+            R.id.menu_item3-> startActivity<PlaceListActivity>()
         }
+        return false
     }
 
 }
