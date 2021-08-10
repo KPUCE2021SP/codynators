@@ -19,7 +19,8 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SummerProject">
+        android:theme="@style/Theme.SummerProject"
+        android:name=".MyApplication">
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -33,6 +34,8 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAJhCZcJjUX78u9iDvLv-0FiT-Zjm1OXeQ" />
 
+
+
         <activity android:name=".CheckInActivity" />
         <activity android:name=".CheckOutActivity" />
         <activity android:name=".RegisterActivity" />
@@ -40,7 +43,6 @@
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -64,11 +66,24 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- Redirect URI: "kakao{NATIVE_APP_KEY}://oauth“ -->
+                <data
+                    android:host="oauth"
+                    android:scheme="kakao232c80a227021aaea42ac9e932f51c85" />
             </intent-filter>
         </activity>
     </application>

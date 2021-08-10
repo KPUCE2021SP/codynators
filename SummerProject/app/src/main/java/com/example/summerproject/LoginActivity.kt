@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.facebook.*
-import com.facebook.appevents.AppEventsLogger
+import com.facebook.AccessToken
+import com.facebook.CallbackManager
+import com.facebook.FacebookCallback
+import com.facebook.FacebookException
 import com.facebook.login.LoginResult
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -18,11 +20,12 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.kakao.sdk.auth.LoginClient
+import com.kakao.sdk.auth.model.OAuthToken
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
-import java.math.BigDecimal
-import java.util.*
+import com.kakao.sdk.common.util.Utility
 
 
 /*
@@ -37,14 +40,28 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        var auth = Firebase.auth
+        val auth = Firebase.auth
         callbackManager = CallbackManager.Factory.create() // 페이스북 위한 콜백 매니저
         firebaseAuth = FirebaseAuth.getInstance() // Firebase Auth 객체를 얻는 변수
 
+        val TAG = "LoginActivity"
+        val keyHash = Utility.getKeyHash(this)
+        Log.v(TAG, keyHash)
+
+        // 카카오 로그인 callback 구성
+        val callback: (OAuthToken?, Throwable?) -> Unit = { token, error ->
+            if (error != null) {
+                //로그인 실패시
+            }
+            else if (token != null) {
+                //로그인 성공시
+                startActivity<MainActivity>()
+            }
+        }
 
         login_button.setReadPermissions("email", "public_profile")
         login_button.registerCallback(callbackManager, object :
-            FacebookCallback<LoginResult> {
+                FacebookCallback<LoginResult> {
             override fun onSuccess(loginResult: LoginResult) {
                 Log.d(TAG, "facebook:onSuccess:$loginResult")
                 handleFacebookAccessToken(loginResult.accessToken) // 로그인 성공시 handleFacebookAccessToken 함수 실행
@@ -74,7 +91,7 @@ class LoginActivity : AppCompatActivity() {
             if(userEmail == "" || password == ""){
                 toast("E-mail or Password is blank")
             }else{
-                var create = auth.signInWithEmailAndPassword(userEmail,password)
+                var create = auth.signInWithEmailAndPassword(userEmail, password)
                 create.addOnCompleteListener(this) {
                     if (it.isSuccessful) {
                         startActivity<MainActivity>() // 로그인 성공시 MainActivity 실행
@@ -93,16 +110,27 @@ class LoginActivity : AppCompatActivity() {
             overridePendingTransition(R.anim.fadein, R.anim.fadeout)
         }
 
-        googleBtn.setOnClickListener{
+        googleBtn.setOnClickListener{ // 구글 버튼 로그인
             signIn()
+        }
+
+        KakaoLogin.setOnClickListener{ // 카카오 간편 로그인
+            LoginClient.instance.run {
+                if (isKakaoTalkLoginAvailable(this@LoginActivity)) {
+                    loginWithKakaoTalk(this@LoginActivity, callback = callback)
+                } else {
+                    loginWithKakaoAccount(this@LoginActivity, callback = callback)
+                }
+            }
         }
     }
 
-    override fun onStart() { // 액티비티 주기 단계 중 -> 계정 존재 시 -> 바로 MainActivity로 진행
-        super.onStart()
-        val currentUser = firebaseAuth.currentUser
-        updateUI(currentUser)
-    }
+//    override fun onStart() { // 액티비티 주기 단계 중 -> 계정 존재 시 -> 바로 MainActivity로 진행
+//        super.onStart()
+//        val currentUser = firebaseAuth.currentUser
+//        updateUI(currentUser)
+//    }
+
 
     // 구글 간편로그인 함수
     private fun signIn() {
@@ -142,7 +170,7 @@ class LoginActivity : AppCompatActivity() {
                 } else {
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
                     Toast.makeText(baseContext, "Authentication failed.",
-                        Toast.LENGTH_SHORT).show()
+                            Toast.LENGTH_SHORT).show()
                     updateUI(null)
                 }
             }
@@ -175,6 +203,7 @@ class LoginActivity : AppCompatActivity() {
         private const val TAG = "GoogleActivity&FacebookActivity"
         private const val RC_SIGN_IN = 9001
     }
+
 
 
 //    private fun doLogin(userEmail: String, password: String){ // 로그인 함수

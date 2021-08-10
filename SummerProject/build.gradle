@@ -19,6 +19,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }// Android SDK 레파지토리 설정
     }
 }
 
