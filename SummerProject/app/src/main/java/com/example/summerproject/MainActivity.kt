@@ -19,6 +19,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.appbar.*
 import org.jetbrains.anko.startActivity
 import java.util.*
 import kotlin.collections.ArrayList
@@ -78,19 +79,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
         // 2021.08.01 khsexk: 체크인 and 체크아웃
-//        checkIn.setOnClickListener{
-//            startActivity<CheckInActivity>()
-//            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
-//        }
-//        checkOut.setOnClickListener {
-//            startActivity<CheckOutActivity>()
-//            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
-//        }
-//
-//        placeList.setOnClickListener {
-//            startActivity<MapActivity>()
-//            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
-//        }
+        checkIn.setOnClickListener{
+            startActivity<CheckInActivity>()
+            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+        }
+        checkOut.setOnClickListener {
+            startActivity<CheckOutActivity>()
+            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+        }
+
+        placeList.setOnClickListener {
+            startActivity<MapActivity>()
+            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+        }
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         //클릭한 툴바 메뉴 아이템 id마다 다르게 실행하도록 설정
