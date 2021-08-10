@@ -70,11 +70,12 @@
 
     <ImageButton
         android:id="@+id/googleBtn"
-        android:layout_width="268dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="264dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.013"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginBtn"
         facebook:srcCompat="@drawable/google" />
@@ -85,9 +86,20 @@
         android:layout_height="24dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="72dp"
-        android:layout_marginTop="408dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/googleBtn" />
+
+    <ImageView
+        android:id="@+id/KakaoLogin"
+        android:layout_width="277dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_button"
+        facebook:srcCompat="@drawable/kakao_login_medium_wide" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
