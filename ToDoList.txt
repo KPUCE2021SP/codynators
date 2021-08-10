@@ -1,0 +1,2 @@
+Firebase를 활용한 Database 구성
+카카오톡/페이스북 등 간편로그인 제공을 위한 API 활용
