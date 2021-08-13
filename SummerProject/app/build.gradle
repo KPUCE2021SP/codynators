@@ -37,7 +37,8 @@ android {
 }
 
 dependencies {
-    implementation platform('com.google.firebase:firebase-bom:28.2.1')
+    
+    implementation platform('com.google.firebase:firebase-bom:28.3.0')  //eemeeks : firebase 버전최신으로 변경
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.android.gms:play-services-auth:19.0.0' // 구글 로그인 연동
     implementation 'com.google.firebase:firebase-auth-ktx' // // Firebase Authentication 라이브러리 추가 by 태용
@@ -72,4 +73,10 @@ dependencies {
 
     //Kakao
     implementation "com.kakao.sdk:v2-user:2.0.0" // 카카오 로그인
+
+    //eemdeeks : storage 추가
+    implementation 'com.google.firebase:firebase-storage-ktx'
+
+    //eemdeeks : circleimageView 추가
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }
