@@ -145,4 +145,6 @@ class RegisterActivity : AppCompatActivity() {
 //            }
 //    } null 예외 처리가 안되어 클릭 리스너에서 구현
 }
-class User(val uid: String, val username: String, val profileImageUrl: String)
+class User(val uid: String, val username: String, val profileImageUrl: String){
+    constructor() : this("","","")
+}
