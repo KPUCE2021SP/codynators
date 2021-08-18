@@ -56,9 +56,17 @@
                         android:id="@+id/textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginBottom="20dp"
                         android:text="Check-In"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/qr_scan" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -71,11 +79,19 @@
                     android:foreground="?attr/selectableItemBackground"
                     app:cardCornerRadius="30dp">
 
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/place" />
+
                     <TextView
                         android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginBottom="20dp"
                         android:text="Place List"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
                 </androidx.cardview.widget.CardView>
@@ -103,9 +119,17 @@
                         android:id="@+id/textView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginBottom="20dp"
                         android:text="Check-Out"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/out" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -122,9 +146,17 @@
                         android:id="@+id/textView4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginBottom="20dp"
                         android:text="Current Place"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/seat" />
                 </androidx.cardview.widget.CardView>
 
             </LinearLayout>

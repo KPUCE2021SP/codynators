@@ -11,23 +11,45 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.appbar.*
+import kotlinx.android.synthetic.main.header.*
 import org.jetbrains.anko.startActivity
 import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var navigationView: NavigationView
     lateinit var drawerLayout: DrawerLayout
+    lateinit var storage : FirebaseStorage
     // 2021.08.01 khsexk: rdb 연동
 //    val database : FirebaseDatabase = FirebaseDatabase.getInstance()
 //    val myRef : DatabaseReference = database.getReference("Table Use Information") made by 현석
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        storage = Firebase.storage
+
+//        헤더에 유저 면상과 이름 띄울 예정
+//        var uid = FirebaseAuth.getInstance().uid.toString()
+//        var userDB = Firebase.database.getReference("users")
+//        var imgUrl = userDB.child(uid).child("profileImageUrl").toString()
+//
+//        var imgRef = storage.getReferenceFromUrl(imgUrl)
+
+
+
 
 
         val toolbar : Toolbar = findViewById(R.id.toolbar) // toolBar를 통해 App Bar 생성
@@ -125,5 +147,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         return false
     }
+
 
 }

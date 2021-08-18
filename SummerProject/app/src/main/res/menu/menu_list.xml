@@ -2,11 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/menu_item1"
-        android:title="checkIn" />
+        android:icon="@drawable/profile"
+        android:title="Profile" />
     <item
         android:id="@+id/menu_item2"
-        android:title="checkOut" />
+        android:icon="@drawable/notice"
+        android:title="Notice" />
     <item
         android:id="@+id/menu_item3"
-        android:title="placeList" />
+        android:icon="@drawable/message"
+        android:title="Message" />
+    <item
+        android:id="@+id/menu_logout"
+        android:icon="@drawable/logout"
+        android:title="Logout"
+        />
 </menu>
