@@ -67,6 +67,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         app:srcCompat="@drawable/qr_scan" />
+
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView

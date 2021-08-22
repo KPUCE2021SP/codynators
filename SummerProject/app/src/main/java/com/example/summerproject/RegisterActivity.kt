@@ -24,6 +24,7 @@ import java.util.*
 * 회원가입 구현  21.07.30 김태용 afterschool -weekely
 * RDB에 회원 정보 저장(이름,이미지추가) 21.08.13 - eemdeeks
 * Anko 라이브러리 사용*/
+
 class RegisterActivity : AppCompatActivity() {
     private lateinit var auth : FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -91,8 +92,8 @@ class RegisterActivity : AppCompatActivity() {
             selectphoto_imageview_register.setImageBitmap(bitmap)
             selectphoto_button_register.alpha = 0f
 
-        //    val bitmapDrawable = BitmapDrawable(bitmap)
-        //    selectphoto_button_register.setBackgroundDrawable(bitmapDrawable)
+            //    val bitmapDrawable = BitmapDrawable(bitmap)
+            //    selectphoto_button_register.setBackgroundDrawable(bitmapDrawable)
         }
 
     }
@@ -130,18 +131,4 @@ class RegisterActivity : AppCompatActivity() {
             Log.d("RegisterActivity","Finally we saved the user to Firebase Database")
         }
     }
-
-//    private fun doSignUp(userEmail: String, password: String){ // 회원가입을 위한 함수
-//        auth.createUserWithEmailAndPassword(userEmail, password)
-//            .addOnCompleteListener(this){
-//                if(it.isSuccessful){
-//                    startActivity<MainActivity>()
-//                    finish()
-//                    overridePendingTransition(R.anim.fadein,R.anim.fadeout)
-//                }else{
-//                    Log.w("LoginActivity", "signInWithEmail", it.exception)
-//                    toast("회원가입 실패 비밀번호 6자리 이상 입력하세요!")
-//                }
-//            }
-//    } null 예외 처리가 안되어 클릭 리스너에서 구현
 }

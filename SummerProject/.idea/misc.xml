@@ -3,15 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/drawable-v24/button_corner.xml" value="0.2703125" />
+        <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/drawable-v24/edit_background.xml" value="0.2703125" />
+        <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/drawable-v24/rounded_select_photo_button.xml" value="0.2703125" />
+        <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/drawable-v24/top_color.xml" value="0.2703125" />
+        <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/drawable-v24/top_left_corner.xml" value="0.2703125" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/drawable/out.xml" value="0.2703125" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/drawable/qr_scan.xml" value="0.2703125" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/drawable/seat.xml" value="0.2703125" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_current_place.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_home.xml" value="0.4" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_latest_messages.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_login.xml" value="0.4" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_new_message.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_place_list.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_register.xml" value="0.4" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/appbar.xml" value="0.4" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/chat_from_row.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/chat_to_row.xml" value="0.25416666666666665" />

@@ -2,9 +2,11 @@ package com.example.summerproject
 
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
@@ -21,6 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.appbar.*
@@ -32,6 +35,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var navigationView: NavigationView
     lateinit var drawerLayout: DrawerLayout
     lateinit var storage : FirebaseStorage
+
     // 2021.08.01 khsexk: rdb 연동
 //    val database : FirebaseDatabase = FirebaseDatabase.getInstance()
 //    val myRef : DatabaseReference = database.getReference("Table Use Information") made by 현석
@@ -39,14 +43,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        storage = Firebase.storage
-
-//        헤더에 유저 면상과 이름 띄울 예정
+//        storage = Firebase.storage
+//
 //        var uid = FirebaseAuth.getInstance().uid.toString()
 //        var userDB = Firebase.database.getReference("users")
 //        var imgUrl = userDB.child(uid).child("profileImageUrl").toString()
 //
 //        var imgRef = storage.getReferenceFromUrl(imgUrl)
+//
+//        displayImageRef(imgRef,header_user_img)
 
 
 
@@ -81,9 +86,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val itemsCollectionRef = db.collection("Table use Information") // Collection 이름 : written by 태용
 //
         val itemMap = hashMapOf( // to 앞의 값은 Key, to 뒤의 값은 value : written by 태용
-                "userID" to "${FirebaseAuth.getInstance().currentUser}",
-                "useInfo" to false,
-                "useTable" to " "
+            "userID" to "${FirebaseAuth.getInstance().currentUser}",
+            "useInfo" to false,
+            "useTable" to " "
         )
 
         //board.bringToFront()
@@ -91,9 +96,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         for(it in array){ // "Table use Information"이라는 컬렉션 밑에  table1, table2, table3 document 추가하고 각 document에 key : value 삽입
             // : written by 태용
             itemsCollectionRef.document(it)
-                    .set(itemMap)
-                    .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!")  }
-                    .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
+                .set(itemMap)
+                .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!")  }
+                .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
         }
 
         // 2021.08.01 khsexk: 체크인 and 체크아웃
@@ -148,5 +153,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return false
     }
 
+
+    private fun displayImageRef(imageRef: StorageReference?, view: ImageView) {
+        imageRef?.getBytes(Long.MAX_VALUE)?.addOnSuccessListener {
+            val bmp = BitmapFactory.decodeByteArray(it, 0, it.size)
+            view.setImageBitmap(bmp)
+        }?.addOnFailureListener {
+// Failed to download the image
+        }
+    }
 
 }
