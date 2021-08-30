@@ -27,6 +27,13 @@ import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import com.kakao.sdk.common.util.Utility
 import kotlinx.android.synthetic.main.activity_home.*
+import android.content.pm.PackageManager
+
+import android.content.pm.PackageInfo
+import android.util.Base64
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
+
 
 class HomeActivity: AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
@@ -37,21 +44,26 @@ class HomeActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        //getHashKey()
+
+
         val auth = Firebase.auth
         callbackManager = CallbackManager.Factory.create() // 페이스북 위한 콜백 매니저
         firebaseAuth = FirebaseAuth.getInstance() // Firebase Auth 객체를 얻는 변수
 
-        val TAG = "LoginActivity"
+        val TAG = "HomeActivity"
         val keyHash = Utility.getKeyHash(this)
         Log.v(TAG, keyHash)
 
         // 카카오 로그인 callback 구성
         val callback: (OAuthToken?, Throwable?) -> Unit = { token, error ->
             if (error != null) {
+                toast("로그인 실패")
                 //로그인 실패시
             }
             else if (token != null) {
                 //로그인 성공시
+                toast("로그인 성공")
                 startActivity<MainActivity>()
             }
         }
@@ -119,6 +131,25 @@ class HomeActivity: AppCompatActivity() {
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
+
+//    private fun getHashKey() {
+//        var packageInfo: PackageInfo? = null
+//        try {
+//            packageInfo = packageManager.getPackageInfo(packageName, PackageManager.GET_SIGNATURES)
+//        } catch (e: PackageManager.NameNotFoundException) {
+//            e.printStackTrace()
+//        }
+//        if (packageInfo == null) Log.e("KeyHash", "KeyHash:null")
+//        for (signature in packageInfo!!.signatures) {
+//            try {
+//                val md: MessageDigest = MessageDigest.getInstance("SHA")
+//                md.update(signature.toByteArray())
+//                Log.d("KeyHash", Base64.encodeToString(md.digest(), Base64.DEFAULT))
+//            } catch (e: NoSuchAlgorithmException) {
+//                Log.e("KeyHash", "Unable to get MessageDigest. signature=$signature", e)
+//            }
+//        }
+//    }
 
 
     // onActivityResult는 main액티비티에서 sub액티비티를 호출하여 넘어갔다가, 다시 main 액티비티로 돌아올때 사용되는 기본 메소드 이다.
