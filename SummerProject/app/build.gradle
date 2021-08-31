@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'com.google.gms.google-services'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -35,10 +36,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
-    
+    def nav_version = "2.3.5"
+
     implementation platform('com.google.firebase:firebase-bom:28.3.0')  //eemeeks : firebase 버전최신으로 변경
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.android.gms:play-services-auth:19.0.0' // 구글 로그인 연동
@@ -88,4 +94,8 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     implementation "io.grpc:grpc-okhttp:1.32.2"
+
+    // 네비게이션 뷰를 위한 것
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 }

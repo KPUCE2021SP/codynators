@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:title="홈"
+        android:icon="@drawable/ic_home"
+        />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:title="프로필"
+        android:icon="@drawable/ic_profile"
+        />
+
+    <item
+        android:id="@+id/messageFragment"
+        android:title="메시지"
+        android:icon="@drawable/ic_message"
+        />
+
+    <item
+        android:id="@+id/logoutFragment"
+        android:title="로그아웃"
+        android:icon="@drawable/ic_logout"
+        />
+
+</menu>
