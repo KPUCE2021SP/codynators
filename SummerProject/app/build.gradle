@@ -45,7 +45,7 @@ android {
 dependencies {
     def nav_version = "2.3.5"
 
-    implementation platform('com.google.firebase:firebase-bom:28.3.0')  //eemeeks : firebase 버전최신으로 변경
+    implementation platform('com.google.firebase:firebase-bom:28.3.1')  //eemeeks : firebase 버전최신으로 변경
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.android.gms:play-services-auth:19.0.0' // 구글 로그인 연동
     implementation 'com.google.firebase:firebase-auth-ktx' // // Firebase Authentication 라이브러리 추가 by 태용
@@ -98,4 +98,7 @@ dependencies {
     // 네비게이션 뷰를 위한 것
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    //FCM 서비스를 위해
+    implementation 'com.google.firebase:firebase-messaging-ktx:22.0.0'
 }
