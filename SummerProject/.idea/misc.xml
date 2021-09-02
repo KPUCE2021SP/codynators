@@ -30,7 +30,9 @@
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/appbar.xml" value="0.4" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/chat_from_row.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/chat_to_row.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/fragment_maps.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/header.xml" value="0.4" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/user_row_new_message.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/menu/menu_list.xml" value="0.25416666666666665" />
@@ -38,7 +40,8 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
