@@ -101,4 +101,7 @@ dependencies {
 
     //FCM 서비스를 위해
     implementation 'com.google.firebase:firebase-messaging-ktx:22.0.0'
+
+    //In - App Messaging 을 위해
+    implementation 'com.google.firebase:firebase-inappmessaging-display-ktx'
 }
