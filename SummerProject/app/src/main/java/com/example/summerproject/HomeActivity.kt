@@ -64,7 +64,10 @@ class HomeActivity: AppCompatActivity() {
             else if (token != null) {
                 //로그인 성공시
                 toast("로그인 성공")
-                startActivity<MainActivity>()
+
+                startActivity<SetProfileActivity>()
+
+//                startActivity<MainActivity>()
             }
         }
 
@@ -130,6 +133,7 @@ class HomeActivity: AppCompatActivity() {
     private fun signIn() {
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
+
     }
 
 //    private fun getHashKey() {
@@ -208,7 +212,10 @@ class HomeActivity: AppCompatActivity() {
     private fun updateUI(user: FirebaseUser?) { // user 존재시 MainActivity로 넘어가는 함수
         if(user != null){
             toast("로그인 성공")
-            startActivity<MainActivity>()
+
+            //21.09.03 eemdeeks 프로필 설정
+            startActivity<SetProfileActivity>()
+//            startActivity<MainActivity>()
         }
     }
 

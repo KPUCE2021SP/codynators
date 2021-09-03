@@ -8,55 +8,25 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.activity_set_profile.*
+import kotlinx.android.synthetic.main.activity_set_profile.selectphoto_imageview_set_profile
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import java.util.*
 
-/*
-* 회원가입 구현  21.07.30 김태용 afterschool -weekely
-* RDB에 회원 정보 저장(이름,이미지추가) 21.08.13 - eemdeeks
-* Anko 라이브러리 사용*/
+//21.09.03 eemdeeks 프로필 설정
 
-class RegisterActivity : AppCompatActivity() {
-    private lateinit var auth : FirebaseAuth
+class SetProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
-
-        auth = Firebase.auth // // FireBase Auth 객체를 얻는 인스턴스
+        setContentView(R.layout.activity_set_profile)
 
 
-        Register.setOnClickListener { //회원가입
-            var userEmail = Email.text.toString()
-            var password = PWD.text.toString()
 
-            if(userEmail == "" || password == ""){
-                toast("E-mail or Password is blank")
-            }else{
-                var create = auth.createUserWithEmailAndPassword(userEmail,password)
-                create.addOnCompleteListener(this) {
-                    if (it.isSuccessful) {
-                        toast("Register Success")
-
-                        uploadImageToFirebaseStorage() //프로필 이미지 RDB에 저장함수
-
-                        finish()
-                        overridePendingTransition(R.anim.fadein,R.anim.fadeout)
-                    } else {
-                        toast("Register Failed. Password must be at least 6")
-                    }
-                }
-            }
-
-            //doSignUp(userEmail, password) // 회원가입 위한 함수
-        }
-
-        //프로필 이미지 선택 버튼 구현
-        selectphoto_button_register.setOnClickListener {
+        selectphoto_button_set_profile.setOnClickListener {
             Log.d("RegisterActivity","Try to show photo selector")
 
             val intent = Intent(Intent.ACTION_PICK)
@@ -64,14 +34,26 @@ class RegisterActivity : AppCompatActivity() {
             startActivityForResult(intent, 0)
         }
 
+        set_profile.setOnClickListener {
+            var userName = name_edt_set_profile.text.toString()
 
-        btnCancel.setOnClickListener {
-            finish()
-            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+            if (userName == ""){
+                toast("Name is blank")
+            }else{
+                toast("Set Profile Success")
+
+                uploadImageToFirebaseStorage()
+
+                finish()
+                overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+
+                startActivity<MainActivity>()
+
+            }
         }
 
-    }
 
+    }
     var selectedPhotoUri: Uri? = null   //프로필 이미지 uri
 
     //선택한 프로필 이미지 activity에 보이기
@@ -85,8 +67,8 @@ class RegisterActivity : AppCompatActivity() {
 
             val bitmap = MediaStore.Images.Media.getBitmap(contentResolver,selectedPhotoUri)
 
-            selectphoto_imageview_register.setImageBitmap(bitmap)
-            selectphoto_button_register.alpha = 0f
+            selectphoto_imageview_set_profile.setImageBitmap(bitmap)
+            selectphoto_button_set_profile.alpha = 0f
 
             //    val bitmapDrawable = BitmapDrawable(bitmap)
             //    selectphoto_button_register.setBackgroundDrawable(bitmapDrawable)
@@ -116,15 +98,17 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    //이름, 아이디, 비밀번호, 프로필 이미지 RDB에 저장 함수
     private fun saveUserToFirebaseDatabase(profileImageUrl: String){
         val uid = FirebaseAuth.getInstance().uid ?: ""
         val ref = FirebaseDatabase.getInstance().getReference("/users/$uid")
 
-        val user = User(uid, name_edt_register.text.toString(), profileImageUrl)
+        val user = User(uid, name_edt_set_profile.text.toString(), profileImageUrl)
 
         ref.setValue(user).addOnSuccessListener {
             Log.d("RegisterActivity","Finally we saved the user to Firebase Database")
         }
     }
+
+
+
 }

@@ -34,8 +34,10 @@ import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.appbar.*
+import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.header.*
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
 import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity(){
@@ -150,7 +152,7 @@ class MainActivity : AppCompatActivity(){
 //        }
 
         // 2021.08.16 eemdeeks : 채팅(최근 메시지 액티비티들어가기)
-//        btnChat.setOnClickListener{
+//        home_checkIn.setOnClickListener{
 //            val intent = Intent(this, LatestMessagesActivity::class.java)
 //            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
 //            startActivity(intent)
