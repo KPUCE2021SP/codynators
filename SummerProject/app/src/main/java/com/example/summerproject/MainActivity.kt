@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -91,6 +92,7 @@ class MainActivity : AppCompatActivity(){
 
 
 
+
         /*네비게이션 수정 by 태용*/
 //        val toolbar : Toolbar = findViewById(R.id.toolbar) // toolBar를 통해 App Bar 생성
 //        setSupportActionBar(toolbar)
@@ -149,13 +151,6 @@ class MainActivity : AppCompatActivity(){
 //        placeList.setOnClickListener {
 //            startActivity<MapActivity>()
 //            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
-//        }
-
-        // 2021.08.16 eemdeeks : 채팅(최근 메시지 액티비티들어가기)
-//        home_checkIn.setOnClickListener{
-//            val intent = Intent(this, LatestMessagesActivity::class.java)
-//            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
-//            startActivity(intent)
 //        }
 
     }
