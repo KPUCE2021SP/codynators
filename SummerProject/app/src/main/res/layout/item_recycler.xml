@@ -21,6 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
+            android:fontFamily="@font/tway_air"
             android:text="제목"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
@@ -30,7 +31,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="내용"
+            android:fontFamily="@font/tway_air"
+            android:text="오늘 할 일"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="#878787" />
 
@@ -38,6 +40,7 @@
             android:id="@+id/item_timeline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/tway_air"
             android:layout_gravity="bottom"
             android:text="시간"
             android:textAppearance="@style/TextAppearance.AppCompat.Small" />

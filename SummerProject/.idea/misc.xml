@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/drawable/ic_add.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/drawable/ic_cancel.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/drawable/ic_person.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/drawable/ic_profile.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/layout/activity_home.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/layout/activity_latest_messages.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/layout/activity_main.xml" value="0.182518115942029" />
         <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/layout/activity_new_message.xml" value="0.25364583333333335" />
@@ -11,6 +16,7 @@
         <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/layout/fragment_logout.xml" value="0.1" />
         <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/layout/fragment_message.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
+        <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/layout/item_recycler.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/drawable-v24/button_corner.xml" value="0.2703125" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/drawable-v24/edit_background.xml" value="0.2703125" />

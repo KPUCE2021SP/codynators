@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.summerproject.BoardAdapter
 import com.example.summerproject.BoardData
+import com.example.summerproject.MakeBoardActivity
 import com.example.summerproject.databinding.FragmentMessageBinding
 import kotlinx.android.synthetic.main.fragment_message.*
 
@@ -64,5 +65,4 @@ class messageFragment : Fragment(){
         mBinding!!.rvBulletinBoard.adapter = adapter
         mBinding!!.rvBulletinBoard.layoutManager=LinearLayoutManager(this.context)
     }
-
 }

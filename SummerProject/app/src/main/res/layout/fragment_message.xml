@@ -5,30 +5,83 @@
     android:id="@+id/messageFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BCB6B6"
+    android:background="#FDFAF3"
     tools:context="com.example.summerproject.fragments.messageFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_bulletinBoard"
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="170dp"
+        android:alpha="0.3"
+        android:background="@drawable/back_top"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_person"
+        android:layout_width="54dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/ic_person"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Introduce_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/tway_air"
+        android:text="안녕하세요, OO님. "
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/img_person"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/first_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/tway_air"
+        android:text="오늘 할일을 등록해보세요 !"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_person" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBulletinBoard"
+        android:layout_width="412dp"
+        android:layout_height="482dp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3"
+        app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/item_recycler" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/board_add"
+        android:id="@+id/Add_Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="#FFFFFF"
+        android:layout_marginTop="560dp"
         android:clickable="true"
-        android:foreground="?attr/selectableItemBackground"
-        android:src="@drawable/ic_add"
-        app:backgroundTint="#FF9800"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:contextClickable="true"
+        android:src="@drawable/add_circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.828"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,7 +15,7 @@
 
     <item
         android:id="@+id/messageFragment"
-        android:title="게시판"
+        android:title="To-Do 목록"
         android:icon="@drawable/notice"
         />
 
