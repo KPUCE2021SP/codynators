@@ -50,8 +50,6 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }
             }
-
-          //  doLogin(userEmail, password) // 로그인을 위한 함수
         }
 
         registerBtn.setOnClickListener {

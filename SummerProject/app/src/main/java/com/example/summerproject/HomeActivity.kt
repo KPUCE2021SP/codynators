@@ -30,7 +30,9 @@ import kotlinx.android.synthetic.main.activity_home.*
 import android.content.pm.PackageManager
 
 import android.content.pm.PackageInfo
+import android.graphics.drawable.Drawable
 import android.util.Base64
+import android.widget.ImageView
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 
@@ -44,8 +46,9 @@ class HomeActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        //getHashKey()
+        startActivity<LoadingActivity>()
 
+        //getHashKey()
 
         val auth = Firebase.auth
         callbackManager = CallbackManager.Factory.create() // 페이스북 위한 콜백 매니저
@@ -54,6 +57,26 @@ class HomeActivity: AppCompatActivity() {
         val TAG = "HomeActivity"
         val keyHash = Utility.getKeyHash(this)
         Log.v(TAG, keyHash)
+
+
+        doLogin.setOnClickListener { //로그인을 위한 버튼 리스너
+            var userID = userID.text.toString()
+            var userPassword = userPassword.text.toString()
+
+            if(userID == "" || userPassword == ""){
+                toast("E-mail or Password is blank")
+            }else{
+                var create = auth.signInWithEmailAndPassword(userID, userPassword)
+                create.addOnCompleteListener(this) {
+                    if (it.isSuccessful) {
+                        startActivity<MainActivity>() // 로그인 성공시 MainActivity 실행
+                        overridePendingTransition(R.anim.fadein, R.anim.fadeout)
+                    } else {
+                        toast("Login Failed")
+                    }
+                }
+            }
+        }
 
         // 카카오 로그인 callback 구성
         val callback: (OAuthToken?, Throwable?) -> Unit = { token, error ->
@@ -95,13 +118,6 @@ class HomeActivity: AppCompatActivity() {
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
-
-
-        //
-       doLogin.setOnClickListener {
-           startActivity<LoginActivity>()
-           overridePendingTransition(R.anim.fadein,R.anim.fadeout)
-       }
 
         doRegister.setOnClickListener {
             startActivity<RegisterActivity>()

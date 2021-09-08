@@ -46,6 +46,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAJhCZcJjUX78u9iDvLv-0FiT-Zjm1OXeQ" />
 
+        <activity android:name=".LoadingActivity"/>
         <activity android:name=".CheckInActivity" />
         <activity android:name=".CheckOutActivity" />
         <activity android:name=".RegisterActivity" />
