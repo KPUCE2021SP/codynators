@@ -17,6 +17,7 @@ import kotlinx.android.synthetic.main.chat_from_row.view.*
 import kotlinx.android.synthetic.main.chat_to_row.view.*
 
 //21.08.18 eemdeeks : RDB 이용한 채팅방
+//21.09.09 eemdeeks : RDB에 마지막 채팅 저장
 class ChatLogActivity : AppCompatActivity() {
 
     companion object{
@@ -106,7 +107,7 @@ class ChatLogActivity : AppCompatActivity() {
         val reference = FirebaseDatabase.getInstance()
                 .getReference("/user-messages/$fromId/$toId").push()
         val toReference = FirebaseDatabase.getInstance()
-                .getReference("/user-messages/$toId/$fromId").push()
+                .getReference("/user-messages/$toId/$fromId").push()  //RDB사용 시 push() 사용하면 중복해서 들어가고 없으면 수정이됨..아마?
 
 
         val chatMessage = ChatMessage(reference.key!!, text, fromId!!, toId!!,
@@ -124,6 +125,15 @@ class ChatLogActivity : AppCompatActivity() {
         }
 
         toReference.setValue(chatMessage)
+
+        //마지막 체팅 RDB에 저장
+        //내가 보낸 마지막 메시지
+        val latestMessageRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$fromId/$toId")
+        latestMessageRef.setValue(chatMessage)
+
+        //상대가 보낸 마지막 메시지
+        val latestMessageToRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId")
+        latestMessageToRef.setValue(chatMessage)
     }
 
 
