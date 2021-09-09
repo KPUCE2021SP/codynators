@@ -6,12 +6,15 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_latest_messages.*
+import kotlinx.android.synthetic.main.activity_login.view.*
 import kotlinx.android.synthetic.main.latest_message_row.view.*
 
 //21.08.16 eemdeeks : 최근 메시지 액티비티
@@ -20,6 +23,7 @@ class LatestMessagesActivity : AppCompatActivity() {
 
     companion object{
         var currentUser: User? = null
+        val TAG = "LatestMessages"
     }
 
 
@@ -30,6 +34,17 @@ class LatestMessagesActivity : AppCompatActivity() {
 
         recyclerview_latest_messages.adapter = adapter //리싸이클러뷰에 마지막 메세지 연결
 
+        //리싸이클러뷰 아이템마다 줄그어서 구분
+        recyclerview_latest_messages.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+
+        //set item click listener on your adapter
+        adapter.setOnItemClickListener { item, view ->
+            Log.d(TAG,"item tag")
+
+            val intent = Intent(this, ChatLogActivity::class.java)
+            startActivity(intent)
+        }
+
 //        setupDummyRows()  //리싸이클러 뷰 보이기
 
         listenForLatestMessages()
@@ -37,22 +52,6 @@ class LatestMessagesActivity : AppCompatActivity() {
         fetchCurrentUser()
 
         verifyUserIsLoggedIn()
-
-    }
-
-    //리사이클러 뷰
-    class LatestMessageRow(val chatMessage: ChatMessage): Item<ViewHolder>(){
-        //RDB와 리싸이클러 뷰 바인드
-        override fun bind(viewHolder: ViewHolder, position: Int) {
-
-            viewHolder.itemView.message_textview_latest_message.text = chatMessage.text
-            viewHolder.itemView.username_textview_latest_message.text = "I don't know"
-
-        }
-        override fun getLayout(): Int {
-            return R.layout.latest_message_row
-        }
-
 
     }
 
