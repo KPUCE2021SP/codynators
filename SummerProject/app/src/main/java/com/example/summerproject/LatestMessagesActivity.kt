@@ -19,6 +19,7 @@ import kotlinx.android.synthetic.main.latest_message_row.view.*
 
 //21.08.16 eemdeeks : 최근 메시지 액티비티
 //21.09.09 eemdeeks : 리싸이클러 뷰 이용한 최근 메시지 보이기
+//21.09.10 eemdeeks : 아이템 클릭시 해당 채팅방으로 들어가기
 class LatestMessagesActivity : AppCompatActivity() {
 
     companion object{
@@ -42,6 +43,12 @@ class LatestMessagesActivity : AppCompatActivity() {
             Log.d(TAG,"item tag")
 
             val intent = Intent(this, ChatLogActivity::class.java)
+
+            // we are missing the chat partner user
+
+            val row = item as LatestMessageRow
+
+            intent.putExtra(NewMessageActivity.USER_KEY, row.chatPartnerUser)
             startActivity(intent)
         }
 

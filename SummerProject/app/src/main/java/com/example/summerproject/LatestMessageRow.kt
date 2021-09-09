@@ -12,6 +12,9 @@ import kotlinx.android.synthetic.main.latest_message_row.view.*
 
 //21.09.10 eemdeeks : 리사이클러 뷰
 class LatestMessageRow(val chatMessage: ChatMessage): Item<ViewHolder>(){
+
+    var chatPartnerUser: User? = null  //누구와 채팅하는지 저장할 변수
+
     //RDB와 리싸이클러 뷰 바인드
     override fun bind(viewHolder: ViewHolder, position: Int) {
 
@@ -28,11 +31,11 @@ class LatestMessageRow(val chatMessage: ChatMessage): Item<ViewHolder>(){
         ref.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
 
-                val user = snapshot.getValue(User::class.java)
-                viewHolder.itemView.username_textview_latest_message.text = user?.username
+                chatPartnerUser = snapshot.getValue(User::class.java)
+                viewHolder.itemView.username_textview_latest_message.text = chatPartnerUser?.username
 
                 val targetImageView = viewHolder.itemView.imageview_latest_message
-                Picasso.get().load(user?.profileImageUrl).into(targetImageView)
+                Picasso.get().load(chatPartnerUser?.profileImageUrl).into(targetImageView)
             }
 
             override fun onCancelled(error: DatabaseError) {
