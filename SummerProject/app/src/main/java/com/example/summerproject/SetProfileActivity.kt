@@ -8,7 +8,10 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.android.synthetic.main.activity_set_profile.*
@@ -18,12 +21,14 @@ import org.jetbrains.anko.toast
 import java.util.*
 
 //21.09.03 eemdeeks 프로필 설정
+//21.09.11 eemdeeks 프로필 유무 추가
 
 class SetProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_set_profile)
 
+        ifUseProfile()
 
 
         selectphoto_button_set_profile.setOnClickListener {
@@ -109,6 +114,30 @@ class SetProfileActivity : AppCompatActivity() {
         }
     }
 
+    //21.09.11 eemdeeks : 프로필 설정 유무
+    private fun ifUseProfile(){
+        val uid = FirebaseAuth.getInstance().uid ?: ""
+        val ref = FirebaseDatabase.getInstance().getReference("/users")
+
+        ref.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(p0: DataSnapshot) {
+
+                p0.children.forEach{
+
+                    val user = it.getValue(User::class.java)
+                    if (user?.uid==uid && user?.profileImageUrl!=null){
+                        finish()
+
+                        startActivity<MainActivity>()
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+        })
+    }
 
 
 }

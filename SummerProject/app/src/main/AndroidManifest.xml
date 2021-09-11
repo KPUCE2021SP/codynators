@@ -33,7 +33,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LatestMessagesActivity" />
         </activity>
-        <activity android:name=".LatestMessagesActivity" />
+
+        <activity android:name=".LatestMessagesActivity"/>
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -62,7 +64,7 @@
         <activity android:name=".PlaceListActivity" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+             />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="fullSensor"
