@@ -49,16 +49,14 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAJhCZcJjUX78u9iDvLv-0FiT-Zjm1OXeQ" />
 
-<<<<<<< HEAD
-        <activity android:name=".LoadingActivity" />
-=======
-        <activity android:name=".LoadingActivity">
+
+        <activity
+            android:name=".LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
->>>>>>> b4552953e7f03a6cdcf7ab2162eb4331c82c988f
         <activity android:name=".CheckInActivity" />
         <activity android:name=".CheckOutActivity" />
         <activity android:name=".RegisterActivity" />
