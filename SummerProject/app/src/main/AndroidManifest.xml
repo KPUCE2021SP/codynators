@@ -21,6 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".MakeBoardActivity"
+            android:exported="true" />
+        <activity
             android:name=".SetProfileActivity"
             android:exported="true" />
         <activity android:name=".ChatLogActivity">
@@ -33,9 +36,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LatestMessagesActivity" />
         </activity>
-
-        <activity android:name=".LatestMessagesActivity"/>
-
+        <activity android:name=".LatestMessagesActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -48,7 +49,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAJhCZcJjUX78u9iDvLv-0FiT-Zjm1OXeQ" />
 
-        <activity android:name=".LoadingActivity"/>
+        <activity android:name=".LoadingActivity" />
         <activity android:name=".CheckInActivity" />
         <activity android:name=".CheckOutActivity" />
         <activity android:name=".RegisterActivity" />
@@ -62,9 +63,7 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".PlaceListActivity" />
-        <activity
-            android:name=".MainActivity"
-             />
+        <activity android:name=".MainActivity" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="fullSensor"

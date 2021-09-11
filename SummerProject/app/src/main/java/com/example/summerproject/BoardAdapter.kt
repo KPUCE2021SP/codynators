@@ -25,7 +25,6 @@ class BoardAdapter : RecyclerView.Adapter<BoardAdapter.Holder>(){
         fun setData(item: BoardData){
             binding.itemTitle.text = item.title
             binding.itemContext.text = item.context
-            binding.itemTimeline.text = item.timeline
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.example.summerproject.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,8 +10,15 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.summerproject.BoardAdapter
 import com.example.summerproject.BoardData
+import com.example.summerproject.CheckInActivity
 import com.example.summerproject.MakeBoardActivity
 import com.example.summerproject.databinding.FragmentMessageBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.EventListener
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_make_board.*
 import kotlinx.android.synthetic.main.fragment_message.*
 
 class messageFragment : Fragment(){
@@ -28,18 +36,33 @@ class messageFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         var binding = FragmentMessageBinding.inflate(inflater, container, false)
+        val db: FirebaseFirestore = Firebase.firestore
+        val itemsCollectionRef = db.collection("MemoList") // Collection 이름
         mBinding = binding
 
         init()
-        with(data){
-            add(BoardData("안녕","방가","지금"))
-            add(BoardData("아니","이제","아까"))
-            add(BoardData("겨우","이걸 하네","아까"))
-        }
+//        with(data){
+//            itemsCollectionRef.document(FirebaseAuth.getInstance().uid.toString()) // document확인하기 위해서
+//                .collection("Memo").get().addOnSuccessListener {
+//                    for(document in it){
+//                        add(BoardData(document.id,document["text"].toString()))
+//                    }
+//                }
+//        }
         refresh()
 
         return mBinding?.root
 
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        register_btn.setOnClickListener {
+            activity?.let{
+                val intent = Intent(context, MakeBoardActivity::class.java)
+                startActivity(intent)
+            }
+        }
+        super.onActivityCreated(savedInstanceState)
     }
 
     override fun onDestroyView() {
@@ -48,15 +71,20 @@ class messageFragment : Fragment(){
     }
 
     private fun init(){
+        val db: FirebaseFirestore = Firebase.firestore
+        val itemsCollectionRef = db.collection("MemoList") // Collection 이름
         boardAdapter = BoardAdapter()
         mBinding!!.rvBulletinBoard.adapter = boardAdapter
 
-        data.apply {
-            add(BoardData("공지","태용 꼬 3","몇분 전"))
-            add(BoardData("필돌","비방글 삭제","몇초 전"))
-
-            boardAdapter.datas = data
-            boardAdapter.notifyDataSetChanged()
+        itemsCollectionRef.document(FirebaseAuth.getInstance().uid.toString()) // document확인하기 위해서
+            .collection("Memo").get().addOnSuccessListener {
+            data.apply{
+                for(document in it){
+                    add(BoardData(document.id,document["text"].toString()))
+                }
+                boardAdapter.datas = data
+                boardAdapter.notifyDataSetChanged()
+            }
         }
     }
     private fun refresh(){

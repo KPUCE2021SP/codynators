@@ -36,14 +36,25 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="#878787" />
 
-        <TextView
-            android:id="@+id/item_timeline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/tway_air"
-            android:layout_gravity="bottom"
-            android:text="시간"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+<!--        <TextView-->
+<!--            android:id="@+id/item_timeline"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/tway_air"-->
+<!--            android:layout_gravity="bottom"-->
+<!--            android:text="시간"-->
+<!--            android:textAppearance="@style/TextAppearance.AppCompat.Small" />-->
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar4"
+            android:layout_width="389dp"
+            android:layout_height="87dp"
+            android:alpha="0.4"
+            android:background="@drawable/to_do_list_1"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.cardview.widget.CardView>
