@@ -5,9 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.summerproject.databinding.FragmentHomeBinding
 import com.example.summerproject.databinding.FragmentLogoutBinding
-import com.example.summerproject.databinding.FragmentProfileBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class logoutFragment : Fragment(){
     private var mBinding : FragmentLogoutBinding? = null
@@ -20,6 +19,13 @@ class logoutFragment : Fragment(){
         val binding = FragmentLogoutBinding.inflate(inflater, container, false)
 
         mBinding = binding
+
+        FirebaseAuth.getInstance().signOut()
+        activity?.supportFragmentManager
+            ?.beginTransaction()
+            ?.remove(this)
+            ?.commit()
+
 
         return mBinding?.root
     }
