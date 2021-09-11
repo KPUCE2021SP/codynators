@@ -12,6 +12,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="108dp"
         android:text="거기\n자리 있대?"
+        android:fontFamily="@font/tway_air"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="#000000"
         android:textStyle="bold"

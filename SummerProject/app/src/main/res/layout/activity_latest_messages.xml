@@ -6,13 +6,66 @@
     android:layout_height="match_parent"
     tools:context=".LatestMessagesActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_home2"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:alpha="0.6"
+        android:background="@drawable/back_top"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_latest_messages"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="#fdfaf3"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_home2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/new_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="#e6e0d2"
+        android:clickable="true"
+        app:backgroundTint="#e6e0d2"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerview_latest_messages"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/img_chat" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/message_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="#e6e0d2"
+        android:clickable="true"
+        app:backgroundTint="#e6e0d2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerview_latest_messages"
+        app:srcCompat="@drawable/btn_clear" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="56dp"
+        android:fontFamily="@font/tway_air"
+        android:text="채팅방"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="@+id/toolbar_home2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_home2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

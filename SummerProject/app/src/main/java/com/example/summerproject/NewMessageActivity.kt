@@ -32,6 +32,10 @@ class NewMessageActivity : AppCompatActivity() {
 
         recyclerview_newmessage.adapter = adapter */
 
+        new_message_back.setOnClickListener {
+            finish()
+            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+        }
         fetchUsers()
     }
 

@@ -52,6 +52,18 @@ class LatestMessagesActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        new_message.setOnClickListener {
+            val intent = Intent(this,NewMessageActivity::class.java)
+            startActivity(intent)
+        }
+
+        message_clear.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(this, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+        }
+
 //        setupDummyRows()  //리싸이클러 뷰 보이기
 
         listenForLatestMessages()

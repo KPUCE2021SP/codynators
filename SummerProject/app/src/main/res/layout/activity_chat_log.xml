@@ -28,22 +28,37 @@
         android:layout_height="50dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:textStyle="bold"
+        android:background="@drawable/button_corner"
         android:text="SEND"
-        android:textColor="@color/white"
-        android:background="@drawable/corner_whiteblue"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_chat_log"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:background="#ADDBE1"
+        android:background="#fdfaf3"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/editText_chat_log"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/chat_log_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="#e6e0d2"
+        android:backgroundTint="#e6e0d2"
+        android:clickable="true"
+        android:padding="5dp"
+        app:backgroundTint="#e6e0d2"
+        app:layout_constraintStart_toStartOf="@+id/recyclerview_chat_log"
+        app:layout_constraintTop_toTopOf="@+id/recyclerview_chat_log"
+        app:srcCompat="@drawable/back" />
 </androidx.constraintlayout.widget.ConstraintLayout>

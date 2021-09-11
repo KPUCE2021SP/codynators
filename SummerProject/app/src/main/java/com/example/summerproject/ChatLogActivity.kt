@@ -48,6 +48,10 @@ class ChatLogActivity : AppCompatActivity() {
             Log.d(TAG, "Attempt to send message....")
             performSendMessage()
         }
+        chat_log_back.setOnClickListener {
+            finish()
+            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+        }
 
     }
 
