@@ -2,10 +2,22 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chat_log_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChatLogActivity"
-    android:background="@color/white">
+    android:background="#e6e0d2"
+    android:foreground="?attr/selectableItemBackground"
+    tools:context=".ChatLogActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e6e0d2"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText_chat_log"
@@ -14,9 +26,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@color/white"
         android:ems="10"
         android:hint="Enter Message"
-        android:background="@color/white"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/send_button_chat_log"
@@ -45,20 +57,16 @@
         app:layout_constraintBottom_toTopOf="@+id/editText_chat_log"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar5" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <ImageButton
         android:id="@+id/chat_log_back"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="0dp"
         android:background="#e6e0d2"
-        android:backgroundTint="#e6e0d2"
-        android:clickable="true"
-        android:padding="5dp"
-        app:backgroundTint="#e6e0d2"
-        app:layout_constraintStart_toStartOf="@+id/recyclerview_chat_log"
-        app:layout_constraintTop_toTopOf="@+id/recyclerview_chat_log"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerview_chat_log"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/back" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
