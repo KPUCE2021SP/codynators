@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
@@ -17,20 +18,18 @@ import java.util.*
 
 // 2021.08.01 khsexk: 체크인 구성
 class CheckInActivity : AppCompatActivity() {
-    val database : FirebaseDatabase = FirebaseDatabase.getInstance()
-    val myRef : DatabaseReference = database.getReference("Table Use Information")
+    //val database : FirebaseDatabase = FirebaseDatabase.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_checkin)
 
         IntentIntegrator(this).initiateScan()
-
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Unit {
         val result : IntentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         val db: FirebaseFirestore = Firebase.firestore
-        val itemsCollectionRef = db.collection("Table use Information") // Collection 이름
+        val itemsCollectionRef = db.collection("Table_Use_Information") // Collection 이름
 
         if(result != null) {
             if(result.getContents() == null) {
@@ -49,7 +48,16 @@ class CheckInActivity : AppCompatActivity() {
 //                myRef.updateChildren(Map)
 
                 //Firebase Cloude Store에 useInfo 값 update : written by 태용
-                itemsCollectionRef.document("Table 1").update("useInfo", true).addOnSuccessListener {// 체크인 ACTIVITY들어왔을 시, useInfo가 true로 변경되는지 체크
+                // 2021.09.13 : update by 현석
+                var useTable : String = result.getContents()
+                val userId : String = FirebaseAuth.getInstance().uid.toString()
+
+                val Table = hashMapOf(
+                    "userId" to userId,
+                    "useInfo" to true
+                )
+
+                itemsCollectionRef.document(useTable).set(Table).addOnSuccessListener {// 체크인 ACTIVITY들어왔을 시, useInfo가 true로 변경되는지 체크
                     Log.d(ContentValues.TAG, "Update successfully written!")
                 }
                 finish()
