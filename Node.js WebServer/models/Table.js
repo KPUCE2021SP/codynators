@@ -1,8 +1,7 @@
 class Table {
-    constructor(userId, useInfo, useTable) {
+    constructor(userId, useInfo) {
             this.userId = userId;
             this.useInfo = useInfo;
-            this.useTable = useTable;
     }
 }
 

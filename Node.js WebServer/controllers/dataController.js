@@ -3,7 +3,7 @@
 
 const Table = require('../models/Table');
 const admin = require('firebase-admin');
-var serviceAccount = require("../path/serviceAccountKey.json");
+var serviceAccount = require("../path/kpu-summerproject-firebase-adminsdk-1gekz-81fd6cf343.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
