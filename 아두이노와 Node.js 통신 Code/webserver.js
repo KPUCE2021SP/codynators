@@ -1,9 +1,4 @@
-var express = require('express');
-var http = require('http');
-var path = require('path');
-var bodyParaser = require('body-parser');
 var SerialPort = require('serialport');
-var app = express();
 
 const parsers = SerialPort.parsers;
 const parser = new parsers.Readline(
@@ -12,7 +7,7 @@ const parser = new parsers.Readline(
     }
 );
 
-var port = new SerialPort('COM3',{
+var port = new SerialPort('COM10',{
     baudRate: 9600,
     dataBits: 8,
     parity: 'none',

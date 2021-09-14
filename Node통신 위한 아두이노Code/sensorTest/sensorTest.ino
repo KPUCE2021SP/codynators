@@ -20,9 +20,9 @@ void loop() {
   Serial.println(MySW.elapsed());
 
   if(MySW.elapsed()>=10000 && value>=300){ // 10초 이상 인식하고 있는데 사람이 있는 경우
-      Serial.println("현재 자리에 사람이 있습니다.");
+      Serial.println("true");
   }else if(MySW.elapsed()>=10000 && value<=300){ // 10초 이상 있는데 사람이 없는 경우
-      Serial.println("현재 자리에 사람이 없습니다.");
+      Serial.println("false");
       delay(5000); // 
       MySW.reset(); // 타이머 초기화
   }else{
