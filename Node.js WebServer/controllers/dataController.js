@@ -1,16 +1,56 @@
 'use strict';
 
-
 const Table = require('../models/Table');
 const admin = require('firebase-admin');
-var serviceAccount = require("../path/kpu-summerproject-firebase-adminsdk-1gekz-81fd6cf343.json");
 
+// 수정 부분
+var SerialPort = require('serialport');
+
+// Firestore 등록
+var serviceAccount = require("../path/kpu-summerproject-firebase-adminsdk-1gekz-81fd6cf343.json");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
-
 const db = admin.firestore();
 
+// 아두이노 데이터 받을 준비
+
+
+// 아두이노에서 압력 데이터 받아서 Firestore로 넘기기
+const addArduinoData = async (req, res, next) => {
+    try {
+        const parsers = SerialPort.parsers;
+        const parser = new parsers.Readline(
+            {
+                delimiters: '\r\n'
+            }
+        );
+
+        var port = new SerialPort('COM10',{
+            baudRate: 9600,
+            dataBits: 8,
+            parity: 'none',
+            stopBits: 1,
+            flowControl: false
+        });
+
+        const data = parser.on('pulseData', function(pulseData){
+            console.log(pulseData);
+            req.body = pulseData;
+            console.log(req.body);
+            data = req.body;
+            console.log(data);
+        });
+        await db.collection('Table_Use_Information').doc('Table_1').set(data);
+        res.send(data);
+        console.log(data);
+    } catch(error) {
+        res.status(400).send(error.message);
+        console.log("Failed with error: " + error);
+    }
+}
+
+// 기존 구현
 const addTable = async (req, res, next) => {
     try {
         const data = req.body;
@@ -92,6 +132,7 @@ const deleteTable = async (req, res, next) => {
 }
 
 module.exports = {
+    addArduinoData,
     addTable,
     getAllTableInfo,
     getTable,

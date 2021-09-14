@@ -1,10 +1,9 @@
-var express = require('express');
-var http = require('http');
-var path = require('path');
-var bodyParaser = require('body-parser');
 var SerialPort = require('serialport');
+<<<<<<< HEAD
 var fs = require('fs');
 var app = express();
+=======
+>>>>>>> b2b7a32a856a60043aac1860713d78d1561bc7d1
 
 const parsers = SerialPort.parsers;
 const parser = new parsers.Readline(
@@ -13,9 +12,14 @@ const parser = new parsers.Readline(
     }
 );
 
+<<<<<<< HEAD
 
 var port = new SerialPort('COM3',{ // 사용하는 아두이노 Serial Port COM3 -> 아두이노에서 모니터 꺼야 노드에서 로그 출력됨
     baudRate: 9600, // 9600bps
+=======
+var port = new SerialPort('COM10',{
+    baudRate: 9600,
+>>>>>>> b2b7a32a856a60043aac1860713d78d1561bc7d1
     dataBits: 8,
     parity: 'none',
     stopBits: 1,
