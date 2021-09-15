@@ -26,6 +26,8 @@ class logoutFragment : Fragment(){
             ?.remove(this)
             ?.commit()
 
+        activity?.supportFragmentManager
+            ?.popBackStack()
 
         return mBinding?.root
     }
