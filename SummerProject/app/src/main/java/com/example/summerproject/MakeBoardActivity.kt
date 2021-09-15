@@ -18,7 +18,8 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_make_board.*
 import java.time.LocalDate
 
-class MakeBoardActivity : AppCompatActivity() {
+class
+MakeBoardActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
