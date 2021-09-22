@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.summerproject.CheckInActivity
+import com.example.summerproject.CheckOutActivity
 import com.example.summerproject.LatestMessagesActivity
 import com.example.summerproject.PlaceListActivity
 import com.example.summerproject.databinding.FragmentHomeBinding
@@ -50,6 +51,12 @@ class homeFragment : Fragment(){
         home_place.setOnClickListener {
             activity?.let{
                 val intent = Intent(context, PlaceListActivity::class.java)
+                startActivity(intent)
+            }
+        }
+        home_checkOut.setOnClickListener {
+            activity?.let{
+                val intent = Intent(context, CheckOutActivity::class.java)
                 startActivity(intent)
             }
         }

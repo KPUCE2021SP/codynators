@@ -14,15 +14,16 @@ import kotlinx.android.synthetic.main.activity_check_out.*
 import java.util.*
 
 // 2021.08.01 khsexk: 체크아웃 구성
+// 2021.09.15 khsexk: 데이터 양식 변경에 따른 코드 변경
 class CheckOutActivity : AppCompatActivity() {
+    val db: FirebaseFirestore = Firebase.firestore
+    val itemsCollectionRef = db.collection("Table_Use_Information") // Collection 이름
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_check_out)
 
         stopUse.setOnClickListener {
-            val db: FirebaseFirestore = Firebase.firestore
-            val itemsCollectionRef = db.collection("Table_Use_Information") // Collection 이름
-
             val Table = hashMapOf(
                 "userId" to "",
                 "useInfo" to false
