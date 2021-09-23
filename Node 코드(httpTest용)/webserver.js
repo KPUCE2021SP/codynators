@@ -58,7 +58,7 @@ var app = express();
 
 
 
-app.get('/checkin', (req,res) => {
+app.get('/check', (req,res) => {
     res.send('CHECK IN');
     
     console.log('CHECK IN');
@@ -78,4 +78,4 @@ app.get('/', (req, res) => {
 
 
 
-app.listen(8080, () => console.log('App is listening on url http://localhost:' + 8080));
+app.listen(3000);
