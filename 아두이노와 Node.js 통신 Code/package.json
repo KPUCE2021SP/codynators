@@ -1,0 +1,14 @@
+{
+  "name": "basic_socket",
+  "version": "0.0.1",
+  "description": "put data from Arduino to Node.js",
+  "main": "webserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Taeyong_Kim",
+  "license": "ISC",
+  "dependencies": {
+    "serialport": "^9.2.1"
+  }
+}
