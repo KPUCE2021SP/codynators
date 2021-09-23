@@ -1,0 +1,17 @@
+{
+  "name": "basic_socket",
+  "version": "0.0.1",
+  "description": "put data from Arduino to Node.js",
+  "main": "webserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "golive": "lt --port 3000"
+  },
+  "author": "Taeyong_Kim",
+  "license": "ISC",
+  "dependencies": {
+    "localtunnel": "^2.0.2",
+    "serialport": "^9.0.1",
+    "socket.io": "^4.2.0"
+  }
+}
