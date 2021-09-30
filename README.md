@@ -27,7 +27,7 @@
 * * *
 
 ### 2. Usecase 📝
-<p align="center"><img src="https://user-images.githubusercontent.com/56003992/127678594-0b4f7868-c6b3-4225-9889-d86cf7ad5449.JPG"  width="400" height="300"></p> 
+<p align="center"><img src="https://user-images.githubusercontent.com/56003992/135412854-d02ebd3c-66bb-4446-b3af-90a4e48af193.png"  width="400" height="300"></p> 
 
 * * *
 
