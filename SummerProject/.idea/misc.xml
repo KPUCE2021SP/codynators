@@ -55,7 +55,8 @@
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_make_board.xml" value="0.25" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_new_message.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_place_list.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_register.xml" value="0.4" />
+        <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_register.xml" value="0.268" />
+        <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_set_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/appbar.xml" value="0.4" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/chat_from_row.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/chat_to_row.xml" value="0.25416666666666665" />
@@ -65,6 +66,7 @@
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/header.xml" value="0.4" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/item_recycler.xml" value="0.268" />
+        <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/latest_message_row.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/user_row_new_message.xml" value="0.1" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/menu/menu_list.xml" value="0.25416666666666665" />
