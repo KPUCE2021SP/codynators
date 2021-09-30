@@ -49,6 +49,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAJhCZcJjUX78u9iDvLv-0FiT-Zjm1OXeQ" />
 
+        <activity android:name=".JuciyActivity"></activity>
 
         <activity
             android:name=".LoadingActivity">

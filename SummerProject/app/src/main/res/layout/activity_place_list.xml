@@ -34,8 +34,8 @@
         app:layout_constraintTop_toTopOf="@+id/toolbar7" />
 
     <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="487dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +54,7 @@
                 android:layout_marginTop="5dp"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
-                app:cardCornerRadius="20dp" >
+                app:cardCornerRadius="20dp">
 
                 <TextView
                     android:id="@+id/textView19"
@@ -62,8 +62,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="15dp"
-                    android:text="제 2기숙사 2층"
                     android:fontFamily="@font/tway_air"
+                    android:text="제 2기숙사 2층"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
             </androidx.cardview.widget.CardView>
 
@@ -74,7 +74,7 @@
                 android:layout_marginTop="5dp"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
-                app:cardCornerRadius="20dp" >
+                app:cardCornerRadius="20dp">
 
                 <TextView
                     android:id="@+id/textView20"
@@ -82,8 +82,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="15dp"
-                    android:text="E 동"
                     android:fontFamily="@font/tway_air"
+                    android:text="E 동"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
             </androidx.cardview.widget.CardView>
 
@@ -94,7 +94,7 @@
                 android:layout_marginTop="5dp"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
-                app:cardCornerRadius="20dp" >
+                app:cardCornerRadius="20dp">
 
                 <TextView
                     android:id="@+id/textView21"
@@ -102,8 +102,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="15dp"
-                    android:text="라운지"
                     android:fontFamily="@font/tway_air"
+                    android:text="라운지"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
             </androidx.cardview.widget.CardView>
 
@@ -118,7 +118,7 @@
                 tools:layout_conversion_absoluteHeight="0dp"
                 tools:layout_conversion_absoluteWidth="0dp"
                 tools:layout_editor_absoluteX="1dp"
-                tools:layout_editor_absoluteY="171dp" >
+                tools:layout_editor_absoluteY="171dp">
 
                 <TextView
                     android:id="@+id/textView22"
@@ -126,10 +126,11 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="15dp"
-                    android:text="쥬씨"
                     android:fontFamily="@font/tway_air"
+                    android:text="쥬씨"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
