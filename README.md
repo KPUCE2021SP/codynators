@@ -44,6 +44,7 @@
 ### 5. Skill Explanation 🛠
 - Framwork: ![Android Badge](https://img.shields.io/badge/-Android-3DDC84?style=flat&logo=Android&logoColor=FFFFFF) ![Firebase Badge](https://img.shields.io/badge/-Firebase-ff0000?style=flat&logo=Firebase) ![Node.js Badge](https://img.shields.io/badge/-Node.js-660099?style=flat&logo=Node.js) ![Arduino Badge](https://img.shields.io/badge/-Arduino-FFFFFF?style=flat&logo=Arduino) 
 - Skill: ![Kotlin Badge](https://img.shields.io/badge/-Kotlin-0095D5?style=flat&logo=Kotlin&logoColor=FFFFFF) ![JavaScript Badge](https://img.shields.io/badge/-JavaScript-005666?style=flat&logo=JavaScript) ![](https://camo.githubusercontent.com/89b52efeb1444c107d4e810705983737057a6dbaf44dd97977abb35ffa92dda9/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f432b2b2d3030353939433f7374796c653d666c61742d737175617265266c6f676f3d43253242253242266c6f676f436f6c6f723d7768697465)
+- 회로도: <img src="https://user-images.githubusercontent.com/56003992/135413103-376471ca-3b32-4cb8-99a7-06b4afe189c5.png"  width="400" height="200"></p> 
 
 
 * * *
