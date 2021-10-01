@@ -19,6 +19,7 @@ import java.util.*
 /*
 * 회원가입 구현  21.07.30 김태용 afterschool -weekely
 * RDB에 회원 정보 저장(이름,이미지추가) 21.08.13 - eemdeeks
+* image default 설정과 이름 비었을 경우 추가    21.10.01 - eemdeeks
 * Anko 라이브러리 사용*/
 
 class RegisterActivity : AppCompatActivity() {
@@ -31,12 +32,16 @@ class RegisterActivity : AppCompatActivity() {
 
 
         Register.setOnClickListener { //회원가입
+            var userName = name_edt_register.toString()
             var userEmail = Email.text.toString()
             var password = PWD.text.toString()
 
             if(userEmail == "" || password == ""){
                 toast("E-mail or Password is blank")
-            }else{
+            }else if(userName == ""){
+                toast("Name is blank")
+            }
+            else{
                 var create = auth.createUserWithEmailAndPassword(userEmail,password)
                 create.addOnCompleteListener(this) {
                     if (it.isSuccessful) {
@@ -96,7 +101,12 @@ class RegisterActivity : AppCompatActivity() {
 
     //프로필 이미지 DB에서 불러오기
     private fun uploadImageToFirebaseStorage(){
-        if(selectedPhotoUri == null) return
+        if(selectedPhotoUri == null) {
+            Log.d("RegisterActivity", "Photo set default")
+            var default_Image = "https://firebasestorage.googleapis.com/v0/b/kpu-summerproject.appspot.com/o/images%2F5beaf43d-c9cb-4beb-a1fd-1a9d0718ee96?alt=media&token=7ba5badb-b6fd-43d7-a076-7688e1f0eac8"
+            saveUserToFirebaseDatabase(default_Image)
+
+        }
 
         val filename = UUID.randomUUID().toString()
         val ref = FirebaseStorage.getInstance().getReference("/images/$filename")
