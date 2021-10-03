@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/logoutFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="#FFEB3B"
-    android:id="@+id/logoutFragment"
-    tools:context="com.example.summerproject.fragments.logoutFragment">
+    android:background="#FFFFFF"
+    tools:context="com.example.summerproject.fragments.logoutFragment" >
 
     <TextView
+        android:id="@+id/textView37"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="로그아웃"
-        android:textSize="50sp"
-        android:layout_centerInParent="true"/>
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="351dp"
+        android:layout_marginEnd="144dp"
+        android:layout_marginBottom="350dp"
+        android:text="로구아웃 중..."
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 </RelativeLayout>
