@@ -22,6 +22,7 @@ import java.util.*
 
 //21.09.03 eemdeeks 프로필 설정
 //21.09.11 eemdeeks 프로필 유무 추가
+//21.10.01 eemdeeks 프로필 이미지 default 설정 추가
 
 class SetProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -83,17 +84,22 @@ class SetProfileActivity : AppCompatActivity() {
 
     //프로필 이미지 DB에서 불러오기
     private fun uploadImageToFirebaseStorage(){
-        if(selectedPhotoUri == null) return
+        if(selectedPhotoUri == null) {
+            Log.d("SetProfileActivity", "Photo set default")
+            var default_Image = "https://firebasestorage.googleapis.com/v0/b/kpu-summerproject.appspot.com/o/images%2F5beaf43d-c9cb-4beb-a1fd-1a9d0718ee96?alt=media&token=7ba5badb-b6fd-43d7-a076-7688e1f0eac8"
+            saveUserToFirebaseDatabase(default_Image)
+
+        }
 
         val filename = UUID.randomUUID().toString()
         val ref = FirebaseStorage.getInstance().getReference("/images/$filename")
 
         ref.putFile(selectedPhotoUri!!).addOnSuccessListener {
-            Log.d("RegisterActivity", "Successfully uploaded image: ${it.metadata?.path}")
+            Log.d("SetProfileActivity", "Successfully uploaded image: ${it.metadata?.path}")
 
             ref.downloadUrl.addOnSuccessListener {
                 it.toString()
-                Log.d("RegisterActivity","File Location: $it")
+                Log.d("SetProfileActivity","File Location: $it")
 
                 saveUserToFirebaseDatabase(it.toString())
             }
