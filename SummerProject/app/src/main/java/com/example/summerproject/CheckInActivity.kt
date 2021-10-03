@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.google.common.collect.Table
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -52,10 +53,11 @@ class CheckInActivity : AppCompatActivity() {
                 var useTable : String = result.getContents()
                 val userId : String = FirebaseAuth.getInstance().uid.toString()
 
-                val Table = hashMapOf(
+/*                val Table = hashMapOf(
                     "userId" to userId,
                     "useInfo" to true
-                )
+                )*/
+                val Table: TableData = TableData(userId, true)
 
                 itemsCollectionRef.document(useTable).set(Table).addOnSuccessListener {// 체크인 ACTIVITY들어왔을 시, useInfo가 true로 변경되는지 체크
                     Log.d(ContentValues.TAG, "Update successfully written!")

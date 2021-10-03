@@ -5,8 +5,8 @@ class TableData {
     var userId : String = ""
     var useInfo: Boolean = false
 
-    constructor(Userid: String, useInfo: Boolean){
-        this.userId = Userid
+    constructor(userId: String, useInfo: Boolean){
+        this.userId = userId
         this.useInfo = useInfo
     }
 }
