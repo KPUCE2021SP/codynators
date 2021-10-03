@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/KSP/codynators/SummerProject/app/src/main/res/layout/activity_check_out.xml" value="0.25364583333333335" />
+        <entry key="..\:/KSP/codynators/SummerProject/app/src/main/res/layout/activity_juciy.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/drawable/add_circle.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/drawable/ic_add.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/drawable/ic_cancel.xml" value="0.26979166666666665" />
@@ -97,7 +98,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
