@@ -116,16 +116,18 @@ class MainActivity : AppCompatActivity(){
 //        Map.put("Table 3", Table)
 //        myRef.updateChildren(Map) made by 현석
 
+        /*
         /*Cloud Firestore 로 변경하기 위해 작업*/
-        val db: FirebaseFirestore = Firebase.firestore // : written by 태용
-        val array : ArrayList<String> = arrayListOf("Table 1", "Table 2", "Table 3") // 테이블 3개로 테스트 : written by 태용
+        val db: FirebaseFirestore = Firebase.firestore // : written by 태용 // : 수정(현석)
+        val array : ArrayList<String> = arrayListOf("Table_1", "Table_2", "Table_3"
+            , "Table_4", "Table_5", "Table_6", "Table_7", "Table_8", "Table_9", "Table_10"
+            , "Table_11", "Table_12", "Table_13", "Table_14") // 테이블 3개로 테스트 : written by 태용
 
-        val itemsCollectionRef = db.collection("Table use Information") // Collection 이름 : written by 태용
+        val itemsCollectionRef = db.collection("Table_Use_Information") // Collection 이름 : written by 태용
 //
         val itemMap = hashMapOf( // to 앞의 값은 Key, to 뒤의 값은 value : written by 태용
-            "userID" to "${FirebaseAuth.getInstance().currentUser}",
+            "userID" to "",
             "useInfo" to false,
-            "useTable" to " "
         )
 
         //board.bringToFront()
@@ -137,6 +139,9 @@ class MainActivity : AppCompatActivity(){
                 .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!")  }
                 .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
         }
+        */
+
+
 
         // 2021.08.01 khsexk: 체크인 and 체크아웃
 //        checkIn.setOnClickListener{
