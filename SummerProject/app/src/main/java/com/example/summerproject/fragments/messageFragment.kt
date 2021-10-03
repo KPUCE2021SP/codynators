@@ -49,7 +49,7 @@ class messageFragment : Fragment(){
 //                    }
 //                }
 //        }
-        refresh()
+        //refresh()
 
         return mBinding?.root
 
@@ -59,6 +59,7 @@ class messageFragment : Fragment(){
         register_btn.setOnClickListener {
             activity?.let{
                 val intent = Intent(context, MakeBoardActivity::class.java)
+                onDestroyView()// fragment destroy 10.03
                 startActivity(intent)
             }
         }
@@ -87,7 +88,7 @@ class messageFragment : Fragment(){
             }
         }
     }
-    private fun refresh(){
+    fun refresh(){
         val adapter = BoardAdapter()
         adapter.datas = data
         mBinding!!.rvBulletinBoard.adapter = adapter
