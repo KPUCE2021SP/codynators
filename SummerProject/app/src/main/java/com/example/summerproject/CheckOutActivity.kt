@@ -26,8 +26,6 @@ class CheckOutActivity : AppCompatActivity() {
         // 2021.10.03 khsexk: 체크아웃 사용 좌석 가져오기
         val uId : String = FirebaseAuth.getInstance().uid.toString()
 
-
-
         itemsCollectionRef
             .get()
             .addOnSuccessListener { documents ->
@@ -46,12 +44,6 @@ class CheckOutActivity : AppCompatActivity() {
             .addOnFailureListener { exception ->
 
             }
-
-
-
-
-
-
 
         stopUse.setOnClickListener {
             val Table = hashMapOf(
