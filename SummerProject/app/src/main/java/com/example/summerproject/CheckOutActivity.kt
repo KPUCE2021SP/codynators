@@ -39,7 +39,7 @@ class CheckOutActivity : AppCompatActivity() {
                         seat.text = "자리를 사용하고 있지 않습니다"
                         stopUse.isEnabled = false
                     }
-                }
+                } // for
             }
             .addOnFailureListener { exception ->
 

@@ -19,7 +19,10 @@ import java.util.*
 
 // 2021.08.01 khsexk: 체크인 구성
 class CheckInActivity : AppCompatActivity() {
-    //val database : FirebaseDatabase = FirebaseDatabase.getInstance()
+    private val db: FirebaseFirestore = Firebase.firestore
+    private val itemsCollectionRef = db.collection("Table_Use_Information") // Collection 이름
+    var flag: Boolean = false
+    var useTable: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +32,6 @@ class CheckInActivity : AppCompatActivity() {
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Unit {
         val result : IntentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        val db: FirebaseFirestore = Firebase.firestore
-        val itemsCollectionRef = db.collection("Table_Use_Information") // Collection 이름
 
         if(result != null) {
             if(result.getContents() == null) {
@@ -53,10 +54,6 @@ class CheckInActivity : AppCompatActivity() {
                 var useTable : String = result.getContents()
                 val userId : String = FirebaseAuth.getInstance().uid.toString()
 
-/*                val Table = hashMapOf(
-                    "userId" to userId,
-                    "useInfo" to true
-                )*/
                 val Table: TableData = TableData(userId, true)
 
                 itemsCollectionRef.document(useTable).set(Table).addOnSuccessListener {// 체크인 ACTIVITY들어왔을 시, useInfo가 true로 변경되는지 체크
