@@ -71,6 +71,7 @@ class messageFragment : Fragment(){
         super.onDestroyView()
     }
 
+
     private fun init(){
         val db: FirebaseFirestore = Firebase.firestore
         val itemsCollectionRef = db.collection("MemoList") // Collection 이름
@@ -89,6 +90,7 @@ class messageFragment : Fragment(){
         }
     }
     fun refresh(){
+
         val adapter = BoardAdapter()
         adapter.datas = data
         mBinding!!.rvBulletinBoard.adapter = adapter
