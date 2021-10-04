@@ -126,7 +126,7 @@ class MainActivity : AppCompatActivity(){
         val itemsCollectionRef = db.collection("Table_Use_Information") // Collection 이름 : written by 태용
 //
         val itemMap = hashMapOf( // to 앞의 값은 Key, to 뒤의 값은 value : written by 태용
-            "userID" to "",
+            "userId" to "",
             "useInfo" to false,
         )
 

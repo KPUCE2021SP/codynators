@@ -21,13 +21,14 @@ class logoutFragment : Fragment(){
         mBinding = binding
 
         FirebaseAuth.getInstance().signOut()
-        activity?.supportFragmentManager
-            ?.beginTransaction()
-            ?.remove(this)
-            ?.commit()
-
-        activity?.supportFragmentManager
-            ?.popBackStack()
+        activity?.finish()
+//        activity?.supportFragmentManager
+//            ?.beginTransaction()
+//            ?.remove(this)
+//            ?.commit()
+//
+//        activity?.supportFragmentManager
+//            ?.popBackStack()
 
         return mBinding?.root
     }
