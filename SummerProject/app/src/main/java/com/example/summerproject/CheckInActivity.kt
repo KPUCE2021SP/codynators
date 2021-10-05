@@ -15,20 +15,43 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.zxing.integration.android.IntentIntegrator
 import com.google.zxing.integration.android.IntentResult
+import kotlinx.android.synthetic.main.activity_check_out.*
+import kotlinx.android.synthetic.main.activity_checkin.*
 import java.util.*
 
 // 2021.08.01 khsexk: 체크인 구성
 class CheckInActivity : AppCompatActivity() {
     private val db: FirebaseFirestore = Firebase.firestore
     private val itemsCollectionRef = db.collection("Table_Use_Information") // Collection 이름
-    var flag: Boolean = false
     var useTable: String = ""
-
+    // 2021.10.05 khsexk: 이미 좌석을 사용중일 때 예외 처리
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_checkin)
 
-        IntentIntegrator(this).initiateScan()
+        val uId : String = FirebaseAuth.getInstance().uid.toString()
+
+        itemsCollectionRef
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    if(uId==document["userId"]){
+                        flag.text = "true"
+                        useTable = document.id
+                        break
+                    }
+                } // for
+            }
+            .addOnFailureListener { exception ->
+
+            }
+
+        if(flag.text == "true"){
+            Toast.makeText(this, "이미 ${useTable}을 사용중입니다.", Toast.LENGTH_LONG).show();
+            finish()
+        } else {
+            IntentIntegrator(this).initiateScan()
+        }
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Unit {
         val result : IntentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
