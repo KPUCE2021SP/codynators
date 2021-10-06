@@ -3,6 +3,7 @@ package com.example.summerproject
 import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -53,6 +54,7 @@ class CheckOutActivity : AppCompatActivity() {
 
             itemsCollectionRef.document(useTable).set(Table).addOnSuccessListener {// 체크인 ACTIVITY들어왔을 시, useInfo가 true로 변경되는지 체크
                 Log.d(ContentValues.TAG, "Update successfully written!")
+                Toast.makeText(this, "체크아웃 되었습니다", Toast.LENGTH_LONG).show();
             }
             finish()
             overridePendingTransition(R.anim.fadein,R.anim.fadeout)
