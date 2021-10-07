@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/KSP/codynators/SummerProject/app/src/main/res/layout/activity_check_out.xml" value="0.25364583333333335" />
+<<<<<<< HEAD
         <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/drawable/loading.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/drawable/logout.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/layout/activity_home.xml" value="0.25364583333333335" />
@@ -12,6 +13,9 @@
         <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/layout/fragment_todo.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/layout/item_recycler.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/menu/menu_list.xml" value="0.25364583333333335" />
+=======
+        <entry key="..\:/KSP/codynators/SummerProject/app/src/main/res/layout/activity_checkin.xml" value="0.2477355072463768" />
+>>>>>>> 862e80b1c4f293a41cfde6eef2f3b2b1b565535a
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_juciy.xml" value="0.1" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_main.xml" value="0.1" />

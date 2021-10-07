@@ -15,54 +15,77 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.zxing.integration.android.IntentIntegrator
 import com.google.zxing.integration.android.IntentResult
+import kotlinx.android.synthetic.main.activity_check_out.*
+import kotlinx.android.synthetic.main.activity_checkin.*
 import java.util.*
 
 // 2021.08.01 khsexk: 체크인 구성
 class CheckInActivity : AppCompatActivity() {
-    //val database : FirebaseDatabase = FirebaseDatabase.getInstance()
+    private val db: FirebaseFirestore = Firebase.firestore
+    private val itemsCollectionRef = db.collection("Table_Use_Information") // Collection 이름
+    val uId : String = FirebaseAuth.getInstance().uid.toString()
 
+    // 2021.10.05 khsexk: 이미 좌석을 사용중일 때 예외 처리
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_checkin)
 
+
+        itemsCollectionRef
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    if(document["useInfo"] == true || document["userId"] == uId){
+                        flag.text = "true"
+                        break
+                    } else{
+                        flag.text = "false"
+                    }
+                } // for
+            }
+            .addOnFailureListener { exception ->
+
+            }
+
         IntentIntegrator(this).initiateScan()
+
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Unit {
         val result : IntentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        val db: FirebaseFirestore = Firebase.firestore
-        val itemsCollectionRef = db.collection("Table_Use_Information") // Collection 이름
+
 
         if(result != null) {
             if(result.getContents() == null) {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
                 // todo
             } else {
-                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
-
 
                 // Firebase Realtime DB에 쓰기
-//                var useTable : String = result.getContents()
-//                var Table : TableData = TableData("", 1)
-//                var Map : HashMap<String, Any> = HashMap<String, Any>()
-//                Map.put(useTable, Table)
+//              var useTable : String = result.getContents()
+//              var Table : TableData = TableData("", 1)
+//              var Map : HashMap<String, Any> = HashMap<String, Any>()
+//              Map.put(useTable, Table)
 //
-//                myRef.updateChildren(Map)
+//              myRef.updateChildren(Map)
 
                 //Firebase Cloude Store에 useInfo 값 update : written by 태용
                 // 2021.09.13 : update by 현석
-                var useTable : String = result.getContents()
-                val userId : String = FirebaseAuth.getInstance().uid.toString()
+                if(flag.text == "true"){
+                    Toast.makeText(this, "이미 자리를 사용중입니다.", Toast.LENGTH_LONG).show();
+                    finish()
+                } else{
+                    Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+                    var useTable : String = result.getContents()
 
-/*                val Table = hashMapOf(
-                    "userId" to userId,
-                    "useInfo" to true
-                )*/
-                val Table: TableData = TableData(userId, true)
+                    val Table: TableData = TableData(uId, true)
 
-                itemsCollectionRef.document(useTable).set(Table).addOnSuccessListener {// 체크인 ACTIVITY들어왔을 시, useInfo가 true로 변경되는지 체크
-                    Log.d(ContentValues.TAG, "Update successfully written!")
+                    itemsCollectionRef.document(useTable).set(Table).addOnSuccessListener {// 체크인 ACTIVITY들어왔을 시, useInfo가 true로 변경되는지 체크
+                        Log.d(ContentValues.TAG, "Update successfully written!")
+                    }
+
+                    finish()
                 }
-                finish()
+
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);

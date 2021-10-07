@@ -3,6 +3,7 @@ package com.example.summerproject
 import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -26,8 +27,6 @@ class CheckOutActivity : AppCompatActivity() {
         // 2021.10.03 khsexk: 체크아웃 사용 좌석 가져오기
         val uId : String = FirebaseAuth.getInstance().uid.toString()
 
-
-
         itemsCollectionRef
             .get()
             .addOnSuccessListener { documents ->
@@ -41,17 +40,11 @@ class CheckOutActivity : AppCompatActivity() {
                         seat.text = "자리를 사용하고 있지 않습니다"
                         stopUse.isEnabled = false
                     }
-                }
+                } // for
             }
             .addOnFailureListener { exception ->
 
             }
-
-
-
-
-
-
 
         stopUse.setOnClickListener {
             val Table = hashMapOf(
@@ -61,6 +54,7 @@ class CheckOutActivity : AppCompatActivity() {
 
             itemsCollectionRef.document(useTable).set(Table).addOnSuccessListener {// 체크인 ACTIVITY들어왔을 시, useInfo가 true로 변경되는지 체크
                 Log.d(ContentValues.TAG, "Update successfully written!")
+                Toast.makeText(this, "체크아웃 되었습니다", Toast.LENGTH_LONG).show();
             }
             finish()
             overridePendingTransition(R.anim.fadein,R.anim.fadeout)
