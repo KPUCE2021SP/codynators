@@ -50,7 +50,6 @@
             android:layout_width="389dp"
             android:layout_height="87dp"
             android:alpha="0.4"
-            android:background="@drawable/to_do_list_1"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
             app:layout_constraintBottom_toBottomOf="parent"

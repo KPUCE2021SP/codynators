@@ -1,5 +1,6 @@
 package com.example.summerproject
 
+import android.app.Activity
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.graphics.BitmapFactory
@@ -17,6 +18,7 @@ import androidx.navigation.NavHost
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.example.summerproject.databinding.ActivityMainBinding
+import com.example.summerproject.fragments.messageFragment
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -42,8 +44,6 @@ import org.jetbrains.anko.toast
 import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity(){
-    lateinit var drawerLayout: DrawerLayout
-    lateinit var storage : FirebaseStorage
     private lateinit var mBinding: ActivityMainBinding
     // 2021.08.01 khsexk: rdb 연동
 //    val database : FirebaseDatabase = FirebaseDatabase.getInstance()
@@ -53,7 +53,6 @@ class MainActivity : AppCompatActivity(){
 
         mBinding = ActivityMainBinding.inflate(layoutInflater) // activity_main.xml 바인딩위한 변수
         setContentView(mBinding.root)
-
         //네비게이션들을 담는 호스트
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.my_nav_host) as NavHostFragment
 
@@ -76,7 +75,7 @@ class MainActivity : AppCompatActivity(){
             // 로그와 토스트로 찾기
             val msg = getString(R.string.msg_token_fmt, token)
             Log.d("FCM", msg)
-            Toast.makeText(baseContext, msg, Toast.LENGTH_LONG).show()
+            //Toast.makeText(baseContext, msg, Toast.LENGTH_LONG).show()
         })
 
 //        storage = Firebase.storage
@@ -160,6 +159,7 @@ class MainActivity : AppCompatActivity(){
 
     }
 
+
     /*네비게이션 수정으로 인한 주석 처리 by 태용*/
 //    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 //        //클릭한 툴바 메뉴 아이템 id마다 다르게 실행하도록 설정
@@ -199,7 +199,4 @@ class MainActivity : AppCompatActivity(){
 // Failed to download the image
         }
     }
-
-
-
 }

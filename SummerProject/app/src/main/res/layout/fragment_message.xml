@@ -32,26 +32,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/Introduce_Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
-        android:fontFamily="@font/tway_air"
-        android:text="안녕하세요, OO님. "
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#000000"
-        app:layout_constraintStart_toEndOf="@+id/img_person"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/first_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/tway_air"
-        android:text="오늘 할일을 등록해보세요 !"
+        android:text="오늘 해야할 일을 등록해보세요 !"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"

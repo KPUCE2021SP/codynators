@@ -1,6 +1,8 @@
 package com.example.summerproject
 
+import android.app.Activity
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -54,6 +56,9 @@ MakeBoardActivity : AppCompatActivity() {
                             .collection("Memo").document(edit_title.text.toString()) // 날짜별로 저장하기 위해서
                             .set(information)
                             //Collection("MemoList) -> Document(uid) -> Collection(edit_title) -> document("Memo") -> Field(edit_text)
+                        val resultIntent = Intent()
+                        resultIntent.putExtra("result","입력 성공")
+                        setResult(Activity.RESULT_OK,resultIntent)
                         finish()
                     }
                     DialogInterface.BUTTON_NEGATIVE -> {

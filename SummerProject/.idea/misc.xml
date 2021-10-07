@@ -4,6 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/KSP/codynators/SummerProject/app/src/main/res/layout/activity_check_out.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/drawable/loading.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/drawable/logout.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/layout/activity_home.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/layout/fragment_chat.xml" value="0.13072916666666667" />
+        <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/layout/fragment_message.xml" value="0.4" />
+        <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/layout/fragment_todo.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/layout/item_recycler.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/TAEYONG/codynators/SummerProject/app/src/main/res/menu/menu_list.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_juciy.xml" value="0.1" />
         <entry key="..\:/Users/jwzz9/codynators/SummerProject/app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -12,7 +20,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
