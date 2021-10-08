@@ -35,14 +35,14 @@
         android:id="@+id/first_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="64dp"
         android:fontFamily="@font/tway_air"
         android:text="오늘 해야할 일을 등록해보세요 !"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_person" />
+        app:layout_constraintStart_toEndOf="@+id/img_person"
+        app:layout_constraintTop_toTopOf="@+id/toolbar3" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvBulletinBoard"

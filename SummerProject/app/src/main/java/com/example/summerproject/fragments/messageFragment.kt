@@ -75,8 +75,9 @@ class messageFragment : Fragment(){
         itemsCollectionRef.document(FirebaseAuth.getInstance().uid.toString()) // document확인하기 위해서
             .collection("Memo").get().addOnSuccessListener {
                 data.clear()
+                val list = it.documents.reversed()
                 data.apply{
-                for(document in it){
+                for(document in list){
                     add(BoardData(document.id,document["text"].toString()))
                 }
                 boardAdapter.datas = data
