@@ -35,6 +35,7 @@ class CheckOutActivity : AppCompatActivity() {
                         flag = true
                         useTable = document.id
                         seat.text = useTable
+                        stopUse.isEnabled = true
                         break
                     } else {
                         seat.text = "자리를 사용하고 있지 않습니다"
