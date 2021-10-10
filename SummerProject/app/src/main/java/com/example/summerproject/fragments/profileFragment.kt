@@ -15,7 +15,11 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_checkin.*
 import kotlinx.android.synthetic.main.activity_set_profile.*
 import kotlinx.android.synthetic.main.fragment_message.*
 import kotlinx.android.synthetic.main.fragment_profile.*
@@ -24,6 +28,9 @@ import org.jetbrains.anko.startActivity
 
 class profileFragment : Fragment(){
     private var mBinding : FragmentProfileBinding? = null
+    private val db: FirebaseFirestore = Firebase.firestore
+    private val itemsCollectionRef = db.collection("Table_Use_Information") // Collection 이름
+    val uId : String = FirebaseAuth.getInstance().uid.toString()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,6 +54,22 @@ class profileFragment : Fragment(){
                 val user = p0.getValue(User::class.java)
                 profile_name.setText(user?.username)
 
+                itemsCollectionRef
+                    .get()
+                    .addOnSuccessListener { documents ->
+                        for (document in documents) {
+                            if(document["userId"] == uId){
+                                profile_seat.text = (document.id)
+                                break
+                            } else{
+                                profile_seat.text = "자리를 이용 중이지 않습니다"
+                            }
+                        } // for
+                    }
+                    .addOnFailureListener { exception ->
+
+                    }
+
                 Picasso.get().load(user?.profileImageUrl).into(profile_img)
             }
 
@@ -54,10 +77,6 @@ class profileFragment : Fragment(){
 
             }
         })
-
-
-
-
 
         super.onActivityCreated(savedInstanceState)
     }
