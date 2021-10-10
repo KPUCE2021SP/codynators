@@ -46,15 +46,15 @@
 
     <ImageButton
         android:id="@+id/KakaoLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="318dp"
+        android:layout_height="37dp"
         android:layout_marginTop="8dp"
         android:foreground="?attr/selectableItemBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_button"
-        app:srcCompat="@drawable/kakao_login_medium_wide" />
+        app:srcCompat="@drawable/kakao_img" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/doLogin"
@@ -95,8 +95,8 @@
 
     <ImageButton
         android:id="@+id/googleBtn"
-        android:layout_width="343dp"
-        android:layout_height="47dp"
+        android:layout_width="318dp"
+        android:layout_height="37dp"
         android:layout_marginTop="10dp"
         android:foreground="?attr/selectableItemBackground"
         app:layout_constraintEnd_toEndOf="parent"
@@ -161,6 +161,8 @@
             android:inputType="textPersonName"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColorHint="#4A4A4A" />
+
+
 
     </androidx.cardview.widget.CardView>
 
