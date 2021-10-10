@@ -133,4 +133,13 @@
         </LinearLayout>
     </ScrollView>
 
+    <ImageView
+        android:id="@+id/place_back"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:src="@drawable/back"
+        android:tint="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar7" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -153,11 +153,11 @@ class HomeActivity: AppCompatActivity() {
     }
 
 
-    override fun onStart() { // 액티비티 주기 단계 중 -> 계정 존재 시 -> 바로 MainActivity로 진행
-        super.onStart()
-        val currentUser = firebaseAuth.currentUser
-        updateUI(currentUser)
-    }
+//    override fun onStart() { // 액티비티 주기 단계 중 -> 계정 존재 시 -> 바로 MainActivity로 진행
+//        super.onStart()
+//        val currentUser = firebaseAuth.currentUser
+//        updateUI(currentUser)
+//    }
 
     // 구글 간편로그인 함수
     private fun signIn() {

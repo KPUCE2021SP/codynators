@@ -14,5 +14,9 @@ class PlaceListActivity : Activity() {
             startActivity<JuciyActivity>()
             overridePendingTransition(R.anim.fadein,R.anim.fadeout)
         }
+        place_back.setOnClickListener {
+            finish()
+            overridePendingTransition(R.anim.fadein,R.anim.fadeout)
+        }
     }
 }
