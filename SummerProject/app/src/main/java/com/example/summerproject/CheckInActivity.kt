@@ -35,7 +35,7 @@ class CheckInActivity : AppCompatActivity() {
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
-                    if(document["useInfo"] == true || document["userId"] == uId){
+                    if(document["userId"] == uId){
                         flag.text = "true"
                         break
                     } else{
@@ -79,9 +79,32 @@ class CheckInActivity : AppCompatActivity() {
 
                     val Table: TableData = TableData(uId, true)
 
-                    itemsCollectionRef.document(useTable).set(Table).addOnSuccessListener {// 체크인 ACTIVITY들어왔을 시, useInfo가 true로 변경되는지 체크
-                        Log.d(ContentValues.TAG, "Update successfully written!")
+                    itemsCollectionRef
+                        .get()
+                        .addOnSuccessListener { documents ->
+                            for (document in documents) {
+                                if(document["useInfo"] == true && document.id == useTable){
+                                    flag2.text = "true"
+                                    break
+                                } else{
+                                    flag2.text = "false"
+                                }
+                            } // for
+                        }
+                        .addOnFailureListener { exception ->
+
+                        }
+
+                    if(flag.text == "true"){
+                        Toast.makeText(this, "이미 사용중인 자리입니다.", Toast.LENGTH_LONG).show()
+                    } else{
+                        itemsCollectionRef.document(useTable).set(Table).addOnSuccessListener {// 체크인 ACTIVITY들어왔을 시, useInfo가 true로 변경되는지 체크
+                            Log.d(ContentValues.TAG, "Update successfully written!")
+                        }
                     }
+
+
+
 
                     finish()
                 }

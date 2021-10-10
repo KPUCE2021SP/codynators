@@ -37,6 +37,7 @@
         android:layout_marginBottom="30dp"
         android:background="#e6e0d2"
         android:clickable="true"
+        android:visibility="gone"
         app:backgroundTint="#e6e0d2"
         app:layout_constraintBottom_toBottomOf="@+id/recyclerview_latest_messages"
         app:layout_constraintStart_toStartOf="parent"

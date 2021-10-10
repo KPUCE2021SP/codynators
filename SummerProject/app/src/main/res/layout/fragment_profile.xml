@@ -32,10 +32,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="50dp"
         android:layout_marginEnd="40dp"
         android:alpha="0.9"
         app:cardCornerRadius="7dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView">
@@ -59,13 +59,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="50dp"
         android:layout_marginEnd="40dp"
+        android:layout_marginBottom="50dp"
         android:alpha="0.9"
         app:cardCornerRadius="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/profile_seat"
