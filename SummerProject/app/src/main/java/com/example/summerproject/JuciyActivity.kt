@@ -1,6 +1,7 @@
 package com.example.summerproject
 
 import android.app.Dialog
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +11,11 @@ import androidx.cardview.widget.CardView
 import androidx.core.view.isGone
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
+import com.example.summerproject.NewMessageActivity.Companion.USER_KEY
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
@@ -73,8 +79,9 @@ class JuciyActivity : AppCompatActivity() {
                                                 dig.dig(it.value.toString())   //다이얼로그에 닉네임으로 띄움
                                                 dig.setOnClickedListener(object : CustomDialog.ButtonClickListener{     //메세지 버튼 클릭
                                                     override fun onClicked() {
-                                                        TODO("Not yet implemented")
-                                                        //승찬아 여기서 해당 유저한테 메시지 보내는액티비티 넘거아게 만들어줘잉 아래도 똑같이 하나 더 써넣어줘잉
+
+                                                        getToUser(dc.document["userId"].toString()) //체팅으로 넘어가기
+
                                                     }
                                                 })
                                             }
@@ -97,8 +104,9 @@ class JuciyActivity : AppCompatActivity() {
                                                         dig.dig(it.value.toString())   //다이얼로그에 닉네임으로 띄움
                                                         dig.setOnClickedListener(object : CustomDialog.ButtonClickListener{     //메세지 버튼 클릭
                                                             override fun onClicked() {
-                                                                TODO("Not yet implemented")
-                                                                //승찬아 여기서 해당 유저한테 메시지 보내는액티비티 넘거아게 만들어줘잉 아래도 똑같이 하나 더 써넣어줘잉
+
+                                                                getToUser(dc.document["userId"].toString()) //체팅으로 넘어가기
+
                                                             }
                                                         })
                                                     }
@@ -160,5 +168,30 @@ class JuciyActivity : AppCompatActivity() {
 //                })
 //            }
 //        }
+    }
+
+    //자리 사용중인 사람 입력 받고 user class로 스냅샷 찍은 뒤
+    //채팅으로 넘어가기까지
+    //eemdeeks 21.10.10
+    private fun getToUser(uid : String){
+
+        val ref = FirebaseDatabase.getInstance().getReference("/users/$uid")
+        ref.addListenerForSingleValueEvent(object: ValueEventListener {
+
+            override fun onDataChange(p0: DataSnapshot) {
+                val ToUser  = p0.getValue(User::class.java)
+                Log.d("JuciyActivity", "getToUser /${ToUser?.username}")
+
+                val intent = Intent(this@JuciyActivity,ChatLogActivity::class.java)
+                //intent.putExtra(USER_KEY,userItem.user.username)
+                intent.putExtra(USER_KEY,ToUser)
+                startActivity(intent)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+        })
+
     }
 }
