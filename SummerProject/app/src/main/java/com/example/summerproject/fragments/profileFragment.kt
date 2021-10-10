@@ -59,7 +59,7 @@ class profileFragment : Fragment(){
                     .addOnSuccessListener { documents ->
                         for (document in documents) {
                             if(document["userId"] == uId){
-                                profile_seat.text = (document.id)
+                                profile_seat.text = "사용중인 좌석: ${document.id}"
                                 break
                             } else{
                                 profile_seat.text = "자리를 이용 중이지 않습니다"
