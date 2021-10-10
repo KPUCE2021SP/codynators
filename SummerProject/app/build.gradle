@@ -68,7 +68,7 @@ dependencies {
     implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
 
     //Facebook Login
-    implementation 'com.facebook.android:facebook-login:[8.1)' // facebook
+    implementation 'com.facebook.android:facebook-android-sdk:[8,9)'
     implementation 'com.facebook.android:facebook-android-sdk:4.42.0' // facebook
 
     // firestore
